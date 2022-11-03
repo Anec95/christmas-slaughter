@@ -3,6 +3,7 @@ body {
     margin: 0;
     color: rgba(166, 16, 34, 1);
     background-color: rgb(70, 52, 33);
+    user-select: none;
 }
 
 /* header {
@@ -18,7 +19,6 @@ body {
 
     width: 30vw;
     height: 80vh;
-    z-index: 1;
 }
 
 .stats {
@@ -27,7 +27,8 @@ body {
     background-color: rgb(255, 254, 239);
     border: 3px solid rgba(166, 16, 34, 1);
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
+    z-index: 1;
 }
 
 .info {
@@ -35,8 +36,7 @@ body {
     margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    z-index: 1; 
+    align-items: center; 
 }
 
 .hero-name {

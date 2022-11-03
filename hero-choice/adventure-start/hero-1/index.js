@@ -12,7 +12,7 @@ function displayThirdOut() {
 
 displayThirdOut();
 
-optionOne.onclick = function () {
+optionOne.ondblclick = function () {
     optionOne.innerHTML = "Take another decision";
     optionTwo.innerHTML = "Take another decision";
     optionThree.innerHTML = "Take another decision";
