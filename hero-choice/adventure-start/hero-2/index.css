@@ -1,0 +1,323 @@
+body {
+    height: 100%;
+    margin: 0;
+    color: rgba(166, 16, 34, 1);
+    background-color: rgb(70, 52, 33);
+}
+
+header {
+    height: 5vh;
+}
+
+.player-sheet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 80px;
+
+    width: 30vw;
+    height: 80vh;
+}
+
+.stats {
+    width: 100%;
+    height: 30vh;
+    background-color: rgb(255, 254, 239);
+    border: 3px solid rgba(166, 16, 34, 1);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.info {
+    height: 5vh;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-name {
+    margin-left: 20px;
+}
+
+.health{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 120px;
+    height: 22px;
+    margin-right: 20px;
+
+    border: 3px solid rgba(166, 16, 34, 1);
+    border-radius: 8px;
+}
+
+.grid-backpack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 25px);
+    gap: 10px;
+    margin: 20px 20px;    
+}
+
+.object-title {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.object {
+    margin: 0 20px;
+    border: 3px double rgba(166, 16, 34, 1);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.object-name {
+    flex: 1;    
+    margin-left: 5px;
+}
+
+.fa-times-circle-o {    
+    margin-right: 2px;
+    padding-top: 2px;
+}
+
+.fa-times-circle-o:hover {
+    cursor: pointer;
+    filter: brightness(1.75);
+}
+
+.fighting {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+.fight-class {
+    display: flex;
+
+    height: 100px;    
+}
+
+.weapon {    
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: center;
+    flex: 2;
+    margin: 20px;  
+}
+
+.weapon-1 {
+    margin-bottom: 10px;
+}
+
+.armor {
+    flex: 1;
+    margin: 40px;
+}
+
+.fa-shield {
+    font-size: 40px;
+}
+
+.armor-numb {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+                /* SNOW */
+
+                .snowflake {
+                    background-color: aliceblue;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                
+                    position: absolute; 
+                    top: -10px;
+                }
+                
+                .odd {
+                    animation: first-snow 18s linear infinite;
+                }
+                
+                .even {
+                    animation: second-snow 20s linear infinite;
+                }
+                
+                .second-wave {
+                    animation-delay: 2s;
+                }
+                
+                .third-wave {
+                    animation-delay: 4s;
+                }
+                
+                .fourth-wave {
+                    animation-delay: 6s;
+                }
+                
+                .fifth-wave {
+                    animation-delay: 8s;
+                }
+                
+                .sixth-wave {
+                    animation-delay: 10s;
+                }
+                
+                .seventh-wave {
+                    animation-delay: 12s;
+                }
+                
+                .eighth-wave {
+                    animation-delay: 14s;
+                }
+                
+                .ninth-wave {
+                    animation-delay: 16s;
+                }
+                
+                .tenth-wave {
+                    animation-delay: 18s;
+                }
+                
+                .eleventh-wave {
+                    animation-delay: 20s;
+                }
+                
+                .twelfth-wave {
+                    animation-delay: 22s;
+                }
+                
+                .thirteenth-wave {
+                    animation-delay: 24s;
+                }
+                
+                .fourteenth-wave {
+                    animation-delay: 26s;
+                }
+                
+                .fifteenth-wave {
+                    animation-delay: 28s;
+                }
+                
+                .sixteenth-wave {
+                    animation-delay: 30s;
+                }
+                
+                .seventeenth-wave {
+                    animation-delay: 32s;
+                }
+                
+                .eighteenth-wave {
+                    animation-delay: 34s;
+                }
+                
+                .nineteenth-wave {
+                    animation-delay: 36s;
+                }
+                
+                .twentieth-wave {
+                    animation-delay: 38s;
+                }
+                
+                .snow-2 {
+                    left: 5%;
+                }
+                
+                .snow-3 {
+                    left: 10%;
+                }
+                .snow-4 {
+                    left: 15%;
+                }
+                
+                .snow-5 {
+                    left: 20%;
+                }
+                
+                .snow-6 {
+                    left: 25%;
+                }
+                
+                .snow-7 {
+                    left: 30%;
+                }
+                
+                .snow-8 {
+                    left: 35%;
+                }
+                
+                .snow-9 {
+                    left: 40%;
+                }
+                
+                .snow-10 {
+                    left: 45%;
+                }
+                
+                .snow-11 {
+                    left: 50%;
+                }
+                
+                .snow-12 {
+                    left: 55%;
+                }
+                
+                .snow-13 {
+                    left: 60%;
+                }
+                
+                .snow-14 {
+                    left: 65%;
+                }
+                
+                .snow-15 {
+                    left: 70%;
+                }
+                
+                .snow-16 {
+                    left: 75%;
+                }
+                
+                .snow-17 {
+                    left: 80%;
+                }
+                
+                .snow-18 {
+                    left: 85%;
+                }
+                
+                .snow-19 {
+                    left: 90%;
+                }
+                
+                .snow-20 {
+                    left: 95%;
+                }
+                
+                @keyframes first-snow {
+                    0%   {top: 0%;}
+                    25%  {top: 25%;}
+                    50%  {top: 50%;}
+                    75%  {top: 75%;}
+                    100% {top: 99%;}
+                }
+                
+                @keyframes second-snow {
+                    0%   {top: 0%;}
+                    25%  {top: 25%;}
+                    50%  {top: 50%;}
+                    75%  {top: 75%;}
+                    100% {top: 99%;}
+                }
+
