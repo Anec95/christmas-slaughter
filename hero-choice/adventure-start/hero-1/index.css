@@ -6,9 +6,9 @@ body {
     user-select: none;
 }
 
-/* header {
+header {
     height: 5vh;
-} */
+}
 
 .player-sheet {
     display: flex;
@@ -131,13 +131,13 @@ body {
     margin-left: 10px;
 }
 
-.options-container {
+.treeOption {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     position: absolute;
-    top: 80px;
+    top: 20vh;
     left: 40vw;
 
     /* background-color: lightcoral; */
@@ -157,8 +157,19 @@ body {
     margin-bottom: 10px;
 }
 
+.option:hover {
+    cursor: pointer;
+    filter: brightness(150%);
+}
+
 .story-telling {
     margin-bottom: 40px;
+}
+
+.options-container-2,
+.options-container-3,
+.options-container-4 {
+    display: none;
 }
 
 
