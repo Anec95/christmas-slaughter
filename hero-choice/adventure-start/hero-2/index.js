@@ -45,12 +45,27 @@ function unveildContainer(uContainer) {
     uContainer.style.display = "block";
 }
 
-function choice(element, container, uContainer) {
+function choice(element, container, uContainer, item = "", weapon = "") {
     element.ondblclick = function () {
         hiddenContainer(container);
         unveildContainer(uContainer);
-    }; 
+    };
+    if (item != "") {
+        addItems(item);
+        return
+    };
+    if (weapon != "") {
+        addWeapon(weapon);
+    } 
 }
+
+// function addItems(choosenItem) {
+//     const choosenItem = items
+// }
+
+// function addWeapon(choosenWeapon) {
+//     const choosenWeapon = items
+// }
 
 choice(start, intro, containerOne);
 choice(optionOne, containerOne, containerTwo);
