@@ -20,6 +20,19 @@ let objectSix = document.getElementById("object-6");
 let objectSeven = document.getElementById("object-7");
 let objectEight = document.getElementById("object-8");
 
+let items;
+
+let requestURL = "../../../assets/json/items.json";
+let request = new XMLHttpRequest();
+request.open("GET", requestURL);
+request.responseType = "json";
+request.send();
+
+request.onload = function () {
+    items = request.response;
+    console.log(items);
+}
+
 function hiddenContainer(container) {
     container.style.display = "none";
 }
@@ -38,27 +51,6 @@ function choice(element, container, uContainer) {
         unveildContainer(uContainer);
     }; 
 }
-
-// function choiceWithAdd(element, container, uContainer, object) {
-//     element.ondblclick = function () {
-//         hiddenContainer(container);
-//         unveildContainer(uContainer);        
-        
-//     if (objectOne === "..." ||
-//         objectTwo === "..." ||
-//         objectThree === "..." ||
-//         objectFour === "..." ||
-//         objectFive === "..." ||
-//         objectSix === "..." ||
-//         objectSeven === "..." ||
-//         objectEight === "...") {
-//             object.innerHTML = "Sword";
-//         }        
-//     }; 
-// }
-
-// choiceWithAdd(optionTwo, containerOne, containerThree, objectOne);
-
 
 choice(start, intro, containerOne);
 choice(optionOne, containerOne, containerTwo);
