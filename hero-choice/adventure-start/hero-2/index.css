@@ -55,6 +55,20 @@ header {
     border-radius: 8px;
 }
 
+#items-yes-no {
+    width: 100%;
+    height: 50px;
+    background-color: lightcoral;
+    z-index: 2;
+    position: relative;
+    display: none;
+    text-align: center;
+}
+
+#remove-yes {
+    margin-right: 20px;
+}
+
 .grid-backpack {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
