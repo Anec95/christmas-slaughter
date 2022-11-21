@@ -12,45 +12,21 @@
 }
 
 .filler {
-    /* background: linear-gradient(to right, rgb(2, 102, 2), green, rgb(181, 187, 8), rgb(210, 138, 4), rgb(172, 6, 6), rgb(103, 5, 5));
-    width: 400px; */
+    background-color: lightcoral;
+    width: 400px;
     height: 30px;
 
     position: absolute;
     left: 0;
     top: 0;
-    animation: timing 25s linear 1 reverse;
-    animation-fill-mode: forwards;
+    animation: timing 20s linear 1 reverse ;    
 }
 
-/* @keyframes timing {
+@keyframes timing {
     0% {
         transform: scaleX(400px);
     }
     100% {
         transform: scaleX(0);
-    }
-} */
-
-@keyframes timing {
-    0% {
-        width: 100%;
-        background: linear-gradient(to right, rgb(2, 102, 2), green, rgb(181, 187, 8), rgb(210, 138, 4), rgb(172, 6, 6), rgb(103, 5, 5));
-    }
-    20%{
-        background: linear-gradient(to right, rgb(2, 102, 2), green, rgb(181, 187, 8), rgb(210, 138, 4), rgb(172, 6, 6));
-    }
-    40%{
-        background: linear-gradient(to right, rgb(2, 102, 2), green, rgb(181, 187, 8), rgb(210, 138, 4));
-    }
-    60%{
-        background: linear-gradient(to right, rgb(2, 102, 2), green, rgb(181, 187, 8));
-    }
-    80%{
-        background: linear-gradient(to right, rgb(2, 102, 2), green);
-    }
-    100% {
-        width: 0%;
-        background: rgb(2, 102, 2);
     }
 }
