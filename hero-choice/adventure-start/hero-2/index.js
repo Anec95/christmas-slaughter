@@ -91,6 +91,8 @@ function cancelClick(event) {
                 create("button", "remove-yes", "yes");
                 create("button", "remove-no", "no");               
             }
+            // yesOrNo(ev, itemContainer[0]);
+            document.getElementsByClassName("remove-menu")[0].onclick = (ev) => yesOrNo(ev, itemContainer[0]);
             break;
         case cancelButton[1]:
             if (itemContainer[1].textContent != "...") {
