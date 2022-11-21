@@ -91,8 +91,6 @@ function cancelClick(event) {
                 create("button", "remove-yes", "yes");
                 create("button", "remove-no", "no");               
             }
-            // yesOrNo(ev, itemContainer[0]);
-            document.getElementsByClassName("remove-menu")[0].onclick = (ev) => yesOrNo(ev, itemContainer[0]);
             break;
         case cancelButton[1]:
             if (itemContainer[1].textContent != "...") {
@@ -220,8 +218,4 @@ function choice(element, container, uContainer, itemArray) {
 choice(start, intro, containerOne, itemArr[0]);
 choice(optionOne, containerOne, containerTwo, itemArr[1]);
 choice(optionFour, containerTwo, containerThree, itemArr[0]);
-
-
-
-
 
