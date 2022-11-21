@@ -1,0 +1,32 @@
+.time-bar {
+    width: 400px;
+    height: 30px;
+    background-color: transparent;
+    border: 5px solid #73788d;
+    border-radius: 5px;
+
+    position: relative;
+    left: 50%;
+    top: 200px;
+    margin-left: -205px;
+}
+
+.filler {
+    background-color: lightcoral;
+    width: 400px;
+    height: 30px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: timing 20s linear 1 reverse ;    
+}
+
+@keyframes timing {
+    0% {
+        transform: scaleX(400px);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
