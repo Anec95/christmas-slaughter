@@ -62,6 +62,7 @@ function cancelClick(event) {
         case cancelButton[0]:
             if (itemContainer[0].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[0])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);
             }
@@ -70,6 +71,7 @@ function cancelClick(event) {
         case cancelButton[1]:
             if (itemContainer[1].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[1])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);         
             }
@@ -78,6 +80,7 @@ function cancelClick(event) {
         case cancelButton[2]:
             if (itemContainer[2].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[2])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);               
             }
@@ -86,6 +89,7 @@ function cancelClick(event) {
         case cancelButton[3]:
             if (itemContainer[3].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[3])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);               
             }
@@ -94,6 +98,7 @@ function cancelClick(event) {
         case cancelButton[4]:
             if (itemContainer[4].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[4])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);               
             }
@@ -102,6 +107,7 @@ function cancelClick(event) {
         case cancelButton[5]:
             if (itemContainer[5].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[5])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);               
             }
@@ -110,6 +116,7 @@ function cancelClick(event) {
         case cancelButton[6]:
             if (itemContainer[6].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[6])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);               
             }
@@ -118,6 +125,7 @@ function cancelClick(event) {
         case cancelButton[7]:
             if (itemContainer[7].textContent != "...") {
                 yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[7])");
+                noRemove.setAttribute("onclick", "isConfirm(false)");
                 showConfirmBox();
                 isConfirm(answer);               
             }
@@ -204,10 +212,10 @@ function addItems(itemArray) {
 const health = document.getElementsByClassName("health")[0];
 let heart = document.getElementsByClassName("fa-heart");
 
-let index = 7;
+let indexHealth = 7;
 
 function healthDispenser() {    
-    if (index === 7) {
+    if (indexHealth === 7) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -215,7 +223,7 @@ function healthDispenser() {
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>`;
-    } else if (index === 6) {
+    } else if (indexHealth === 6) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -223,7 +231,7 @@ function healthDispenser() {
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (index === 5) {
+    } else if (indexHealth === 5) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -231,7 +239,7 @@ function healthDispenser() {
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (index === 4) {
+    } else if (indexHealth === 4) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -239,7 +247,7 @@ function healthDispenser() {
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (index === 3) {
+    } else if (indexHealth === 3) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -247,7 +255,7 @@ function healthDispenser() {
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (index === 2) {
+    } else if (indexHealth === 2) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -255,7 +263,7 @@ function healthDispenser() {
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (index === 1) {
+    } else if (indexHealth === 1) {
         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -263,7 +271,7 @@ function healthDispenser() {
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (index === 0) {
+    } else if (indexHealth === 0) {
         health.innerHTML = `<i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -282,7 +290,7 @@ function choice(element, container, uContainer, y, itemArray) {
         hiddenContainer(container);
         unveildContainer(uContainer);
         //per togliere vita
-        index=index-y;
+        indexHealth=indexHealth-y;
         healthDispenser();
         //per aggiungere item
         addItems(itemArray);        
