@@ -195,3 +195,18 @@ header {
 .story-telling {
     margin-bottom: 40px;
 }
+
+
+.mountains {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.mountain-1 {
+    background-image: url(../../../assets/images/30-removebg-preview.png);
+    width: 350px;
+    height: 550px;
+}
