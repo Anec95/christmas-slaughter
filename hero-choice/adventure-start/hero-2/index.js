@@ -1,3 +1,8 @@
+import { dataItems } from "./items.js";
+console.log(dataItems);
+import { dataWeapons } from "./items.js";
+console.log(dataWeapons);
+
 let intro = document.getElementById("introduction");
 let start = document.getElementById("starting-button");
 let optionOne = document.getElementById("option-1");
@@ -11,22 +16,13 @@ let containerOne = document.getElementById("container-1");
 let containerTwo = document.getElementById("container-2");
 let containerThree = document.getElementById("container-3");
 
-let objectOne = document.getElementById("object-1");
-let objectTwo = document.getElementById("object-2");
-let objectThree = document.getElementById("object-3");
-let objectFour = document.getElementById("object-4");
-let objectFive = document.getElementById("object-5");
-let objectSix = document.getElementById("object-6");
-let objectSeven = document.getElementById("object-7");
-let objectEight = document.getElementById("object-8");
-
 
 let cancelButton = document.getElementsByClassName("fa-times-circle-o");
 let itemContainer = document.getElementsByClassName("object-name");
 let sureDiv = document.getElementById("items-yes-no");
 let yesRemove = document.getElementById("remove-yes");
 let noRemove = document.getElementById("remove-no");
-let removeMenu = document.getElementById("remove-menu");
+
 let itemArr = [
     {
         name: "apple",
@@ -123,7 +119,6 @@ function addItems(itemArray) {
 const health = document.getElementsByClassName("health")[0];
 let indexHealth = 7;
 
-
 function healthDispenser() {
     let fullHearth = new Array(indexHealth).fill('<i class="fa fa-heart" aria-hidden="true"></i>');
     let emptyHearth = new Array(7-indexHealth).fill('<i class="fa fa-heart-o" aria-hidden="true"></i>');
@@ -139,6 +134,7 @@ function choice(element, container, uContainer, y, itemArray = "") {
         unveildContainer(uContainer);
         //per togliere vita
         indexHealth-=y;
+        
         if (indexHealth <= 0) {
             alert("You are died")
             return;
@@ -154,5 +150,60 @@ function choice(element, container, uContainer, y, itemArray = "") {
 
 
 choice(start, intro, containerOne, 0);
-choice(optionOne, containerOne, containerTwo, 1, itemArr[1]);
-choice(optionFour, containerTwo, containerThree, 3, itemArr[0]);
+choice(optionOne, containerOne, containerTwo, 1, dataItems[0]);
+choice(optionFour, containerTwo, containerThree, 3, dataWeapons[2]);
+
+
+function checkItems(contDel) {    
+    if (indexHealth <= 6
+        && event.target.textContent === "revive"
+        || event.target.textContent === "apple") {
+        let n = event.target.textContent;
+        let i = dataItems.map(object => object.name).indexOf(n);
+
+        let confirmAction = confirm(`Are You sure to use ${dataItems[i].name}? It will make you recover ${dataItems[i].effect} of life `);
+        if (confirmAction) {            
+            if (indexHealth < 6) {
+                indexHealth += Number(dataItems[i].effect);             
+            } else {
+                indexHealth += 1;
+            }
+            contDel.textContent = "...";    
+            healthDispenser();
+        }
+    }
+}
+
+function useItems(event) {    
+    switch (event.target) {
+        case itemContainer[0]:            
+            checkItems(itemContainer[0])
+            break;
+        case itemContainer[1]:
+            checkItems(itemContainer[1])
+            break;
+        case itemContainer[2]:
+            checkItems(itemContainer[2])
+            break;
+        case itemContainer[3]:
+            checkItems(itemContainer[3])
+            break;
+        case itemContainer[4]:
+            checkItems(itemContainer[4])   
+            break;
+        case itemContainer[5]:
+            checkItems(itemContainer[5])
+            break;
+        case itemContainer[6]:
+            checkItems(itemContainer[6])
+            break;
+        case itemContainer[7]:
+            checkItems(itemContainer[7])
+            break;
+        default:
+            console.log("default")
+            break;
+    }
+}
+
+document.getElementsByClassName("backpack")[0].onclick = (event) => useItems(event);
