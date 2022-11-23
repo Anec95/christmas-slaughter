@@ -48,88 +48,45 @@ function closeConfirmBox() {
     sureDiv.style.display = "none";    
 }
 
-function isConfirm(answer, itemCont) {    
-    if (answer) {
-        itemCont.innerText = "...";
-    } else {
-        console.log("You don't lose the item");
+function remove(contDel) {
+    if (contDel.textContent != "...") {
+            showConfirmBox();
+            yesRemove.addEventListener("click", () => {
+                contDel.innerText = "...";
+                closeConfirmBox();  
+            });
+            noRemove.addEventListener("click", () => {
+                console.log("You don't lose your item");
+                closeConfirmBox();
+            }); 
     }
-    closeConfirmBox();    
 }
 
 function cancelClick(event) {
     switch (event.target) {
         case cancelButton[0]:
-            if (itemContainer[0].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[0])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);
-            }
-            closeConfirmBox();
+            remove(itemContainer[0])
             break;
         case cancelButton[1]:
-            if (itemContainer[1].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[1])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);         
-            }
-            closeConfirmBox();
+            remove(itemContainer[1])
             break;
         case cancelButton[2]:
-            if (itemContainer[2].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[2])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);               
-            }
-            closeConfirmBox();
+            remove(itemContainer[2])
             break;
         case cancelButton[3]:
-            if (itemContainer[3].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[3])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);               
-            }
-            closeConfirmBox();
+            remove(itemContainer[3])
             break;
         case cancelButton[4]:
-            if (itemContainer[4].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[4])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);               
-            }
-            closeConfirmBox();   
+            remove(itemContainer[4])   
             break;
         case cancelButton[5]:
-            if (itemContainer[5].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[5])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);               
-            }
-            closeConfirmBox();
+            remove(itemContainer[5])
             break;
         case cancelButton[6]:
-            if (itemContainer[6].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[6])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);               
-            }
-            closeConfirmBox();
+            remove(itemContainer[6])
             break;
         case cancelButton[7]:
-            if (itemContainer[7].textContent != "...") {
-                yesRemove.setAttribute("onclick", "isConfirm(true, itemContainer[7])");
-                noRemove.setAttribute("onclick", "isConfirm(false)");
-                showConfirmBox();
-                isConfirm(answer);               
-            }
-            closeConfirmBox();
+            remove(itemContainer[7])
             break;
         default:
             console.log("default")
@@ -152,148 +109,46 @@ function unveildContainer(uContainer) {
 }
 
 function addItems(itemArray) {
-    if (itemContainer[0].textContent == "..."){
-        itemContainer[0].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent == "...") {
-        itemContainer[1].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent == "...") {
-        itemContainer[2].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent != "..." &&
-    itemContainer[3].textContent == "...") {
-        itemContainer[3].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent != "..." &&
-    itemContainer[3].textContent != "..." &&
-    itemContainer[4].textContent == "...") {
-        itemContainer[4].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent != "..." &&
-    itemContainer[3].textContent != "..." &&
-    itemContainer[4].textContent != "..." &&
-    itemContainer[5].textContent == "...") {
-        itemContainer[5].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent != "..." &&
-    itemContainer[3].textContent != "..." &&
-    itemContainer[4].textContent != "..." &&
-    itemContainer[5].textContent != "..." &&
-    itemContainer[6].textContent == "...") {
-        itemContainer[6].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent != "..." &&
-    itemContainer[3].textContent != "..." &&
-    itemContainer[4].textContent != "..." &&
-    itemContainer[5].textContent != "..." &&
-    itemContainer[6].textContent != "..." &&
-    itemContainer[7].textContent == "...") {
-        itemContainer[7].innerText = itemArray.name;
-    } else if (itemContainer[0].textContent != "..." &&
-    itemContainer[1].textContent != "..." &&
-    itemContainer[2].textContent != "..." &&
-    itemContainer[3].textContent != "..." &&
-    itemContainer[4].textContent != "..." &&
-    itemContainer[5].textContent != "..." &&
-    itemContainer[6].textContent != "..." &&
-    itemContainer[7].textContent != "...") {
-        alert("you have no more space");
+    for (let i = 0; i < itemContainer.length; i++) {
+        if (itemContainer[i].textContent === "...") {
+            itemContainer[i].innerText = itemArray.name;
+            break;
+        } else if (i === itemContainer.length-1 && itemContainer[i].textContent != "...") {
+            alert("you have no more space");
+        }
+
     }
 }
 
-
 const health = document.getElementsByClassName("health")[0];
-let heart = document.getElementsByClassName("fa-heart");
-
 let indexHealth = 7;
 
-function healthDispenser() {    
-    if (indexHealth === 7) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>`;
-    } else if (indexHealth === 6) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (indexHealth === 5) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (indexHealth === 4) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (indexHealth === 3) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (indexHealth === 2) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (indexHealth === 1) {
-        health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-    } else if (indexHealth === 0) {
-        health.innerHTML = `<i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-        alert("You lost the game");
-    }
+
+function healthDispenser() {
+    let fullHearth = new Array(indexHealth).fill('<i class="fa fa-heart" aria-hidden="true"></i>');
+    let emptyHearth = new Array(7-indexHealth).fill('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+
+    health.innerHTML = fullHearth.concat(emptyHearth).join("");
 }
 
 healthDispenser();
 
-function choice(element, container, uContainer, y, itemArray) {
+function choice(element, container, uContainer, y, itemArray = "") {
     element.ondblclick = function () {
         hiddenContainer(container);
         unveildContainer(uContainer);
         //per togliere vita
-        indexHealth=indexHealth-y;
+        indexHealth-=y;
+        if (indexHealth <= 0) {
+            alert("You are died")
+            return;
+        }
         healthDispenser();
         //per aggiungere item
-        addItems(itemArray);        
+        if (itemArray != "") {
+            addItems(itemArray);   
+        }
+             
     }; 
 }
 

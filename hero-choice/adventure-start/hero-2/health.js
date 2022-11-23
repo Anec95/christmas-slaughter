@@ -1,47 +1,11 @@
-// const health = document.getElementsByClassName("health")[0];
-// let heart = document.getElementsByClassName("fa-heart");
+let array = ["ciao", "bella", "..."];
 
-// let index = 5;
 
-// function healthDispenser() {    
-//     if (index === 5) {
-//         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>`;
-//     } else if (index === 4) {
-//         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-//     } else if (index === 3) {
-//         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-//     } else if (index === 2) {
-//         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-//     } else if (index === 1) {
-//         health.innerHTML = `<i class="fa fa-heart" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-//     } else if (index === 0) {
-//         health.innerHTML = `<i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-//                             <i class="fa fa-heart-o" aria-hidden="true"></i>`;
-//         alert("You lost the game");
-//     }
-// }
 
-// healthDispenser();
+for (let i = 0; i < array.length; i++)
+{
+    if (array[i] === "...") {
+        array[i] = "apple"
+        break;
+    }
+}
