@@ -20,6 +20,7 @@ let containerThree = document.getElementById("container-3");
 let cancelButton = document.getElementsByClassName("fa-times-circle-o");
 let itemContainer = document.getElementsByClassName("object-name");
 let sureDiv = document.getElementById("items-yes-no");
+let sureDivText = document.getElementById("remove-text");
 let yesRemove = document.getElementById("remove-yes");
 let noRemove = document.getElementById("remove-no");
 
@@ -35,62 +36,6 @@ let itemArr = [
         effect: "+1 health"
     },
     ];
-
-function showConfirmBox() {
-    sureDiv.style.display = "block";    
-}
-
-function closeConfirmBox() {
-    sureDiv.style.display = "none";    
-}
-
-function remove(contDel) {
-    if (contDel.textContent != "...") {
-            showConfirmBox();
-            yesRemove.addEventListener("click", () => {
-                contDel.innerText = "...";
-                closeConfirmBox();  
-            });
-            noRemove.addEventListener("click", () => {
-                console.log("You don't lose your item");
-                closeConfirmBox();
-            }); 
-    }
-}
-
-function cancelClick(event) {
-    switch (event.target) {
-        case cancelButton[0]:
-            remove(itemContainer[0])
-            break;
-        case cancelButton[1]:
-            remove(itemContainer[1])
-            break;
-        case cancelButton[2]:
-            remove(itemContainer[2])
-            break;
-        case cancelButton[3]:
-            remove(itemContainer[3])
-            break;
-        case cancelButton[4]:
-            remove(itemContainer[4])   
-            break;
-        case cancelButton[5]:
-            remove(itemContainer[5])
-            break;
-        case cancelButton[6]:
-            remove(itemContainer[6])
-            break;
-        case cancelButton[7]:
-            remove(itemContainer[7])
-            break;
-        default:
-            console.log("default")
-            break;
-    }
-}
-
-document.getElementsByClassName("backpack")[0].onclick = (event) => cancelClick(event);
 
 function hiddenContainer(container) {
     container.style.display = "none";
@@ -153,6 +98,14 @@ choice(start, intro, containerOne, 0);
 choice(optionOne, containerOne, containerTwo, 1, dataItems[0]);
 choice(optionFour, containerTwo, containerThree, 3, dataWeapons[2]);
 
+function showConfirmBox(text) {
+    sureDivText.innerText = text;
+    sureDiv.style.display = "block";    
+}
+
+function closeConfirmBox() {
+    sureDiv.style.display = "none";    
+}
 
 function checkItems(contDel) {    
     if (indexHealth <= 6
@@ -160,9 +113,11 @@ function checkItems(contDel) {
         || event.target.textContent === "apple") {
         let n = event.target.textContent;
         let i = dataItems.map(object => object.name).indexOf(n);
+        let y =`Are You sure to use ${dataItems[i].name}? It will make you recover ${dataItems[i].effect} of life `;
 
-        let confirmAction = confirm(`Are You sure to use ${dataItems[i].name}? It will make you recover ${dataItems[i].effect} of life `);
-        if (confirmAction) {            
+        showConfirmBox(y);
+
+        yesRemove.addEventListener("click", () => {
             if (indexHealth < 6) {
                 indexHealth += Number(dataItems[i].effect);             
             } else {
@@ -170,13 +125,57 @@ function checkItems(contDel) {
             }
             contDel.textContent = "...";    
             healthDispenser();
-        }
+            closeConfirmBox();  
+        });
+        noRemove.addEventListener("click", () => {
+            console.log("You don't lose your item");
+            closeConfirmBox();
+        });
     }
 }
 
-function useItems(event) {    
+function remove(contDel) {
+    if (contDel.textContent != "...") {
+            let x= "Are you sure you want to delete this item?";
+            showConfirmBox(x);
+            yesRemove.addEventListener("click", () => {
+                contDel.innerText = "...";
+                closeConfirmBox();  
+            });
+            noRemove.addEventListener("click", () => {
+                console.log("You don't lose your item");
+                closeConfirmBox();
+            }); 
+    }
+}
+
+function cancelOrUseClick(event) {
     switch (event.target) {
-        case itemContainer[0]:            
+        case cancelButton[0]:
+            remove(itemContainer[0])
+            break;
+        case cancelButton[1]:
+            remove(itemContainer[1])
+            break;
+        case cancelButton[2]:
+            remove(itemContainer[2])
+            break;
+        case cancelButton[3]:
+            remove(itemContainer[3])
+            break;
+        case cancelButton[4]:
+            remove(itemContainer[4])   
+            break;
+        case cancelButton[5]:
+            remove(itemContainer[5])
+            break;
+        case cancelButton[6]:
+            remove(itemContainer[6])
+            break;
+        case cancelButton[7]:
+            remove(itemContainer[7])
+            break;
+            case itemContainer[0]:            
             checkItems(itemContainer[0])
             break;
         case itemContainer[1]:
@@ -206,4 +205,4 @@ function useItems(event) {
     }
 }
 
-document.getElementsByClassName("backpack")[0].onclick = (event) => useItems(event);
+document.getElementsByClassName("backpack")[0].onclick = (event) => cancelOrUseClick(event);
