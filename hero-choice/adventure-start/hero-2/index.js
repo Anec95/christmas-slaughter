@@ -24,19 +24,6 @@ let sureDivText = document.getElementById("remove-text");
 let yesRemove = document.getElementById("remove-yes");
 let noRemove = document.getElementById("remove-no");
 
-let itemArr = [
-    {
-        name: "apple",
-        type: "food",
-        effect: "+1 health"
-    },
-    {
-        name: "bread",
-        type: "food",
-        effect: "+1 health"
-    },
-    ];
-
 function hiddenContainer(container) {
     container.style.display = "none";
 }
@@ -96,7 +83,7 @@ function choice(element, container, uContainer, y, itemArray = "") {
 
 choice(start, intro, containerOne, 0);
 choice(optionOne, containerOne, containerTwo, 1, dataItems[0]);
-choice(optionFour, containerTwo, containerThree, 3, dataWeapons[2]);
+choice(optionFour, containerTwo, containerThree, 3, dataItems[1]);
 
 function showConfirmBox(text) {
     sureDivText.innerText = text;
@@ -109,8 +96,8 @@ function closeConfirmBox() {
 
 function checkItems(contDel) {    
     if (indexHealth <= 6
-        && event.target.textContent === "revive"
-        || event.target.textContent === "apple") {
+        && event.target.textContent === "Revive"
+        || event.target.textContent === "Candy apple") {
         let n = event.target.textContent;
         let i = dataItems.map(object => object.name).indexOf(n);
         let y =`Are You sure to use ${dataItems[i].name}? It will make you recover ${dataItems[i].effect} of life `;
