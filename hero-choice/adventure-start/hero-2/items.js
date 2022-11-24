@@ -24,15 +24,15 @@ export const dataWeapons = [
 
 export const dataItems = [
     {
-        "name": "revive",
+        "name": "Revive",
         "type": "potion",
         "effect": "2", //HEALTH
         "quantity": "1"
     },
     {
-        "name": "apple",
+        "name": "Candy apple",
         "type": "food",
-        "effect": "0.5 health",
+        "effect": 1, //HEALTH
         "quantity": "2"
     }
 ]
