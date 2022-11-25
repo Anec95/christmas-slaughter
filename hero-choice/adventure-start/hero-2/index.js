@@ -2,6 +2,8 @@ import { dataItems } from "./items.js";
 console.log(dataItems);
 import { dataWeapons } from "./items.js";
 console.log(dataWeapons);
+import { dataText } from "./quest-text.js";
+console.log(dataText);
 
 let intro = document.getElementById("introduction");
 let start = document.getElementById("starting-button");
@@ -23,6 +25,22 @@ let sureDiv = document.getElementById("items-yes-no");
 let sureDivText = document.getElementById("remove-text");
 let yesRemove = document.getElementById("remove-yes");
 let noRemove = document.getElementById("remove-no");
+let defenseDisplay = document.getElementsByClassName("numb-stat")[0];
+let attackDisplay = document.getElementsByClassName("numb-stat")[1];
+
+function initDefense() {
+    let defense = 10 + Math.floor(Math.random() * 10) + 1;
+    defenseDisplay.innerText = defense;
+}
+
+initDefense();
+
+function initAttack() {
+    let attack = 10 + Math.floor(Math.random() * 10) + 1;
+    attackDisplay.innerText = attack;
+}
+
+initAttack();
 
 function hiddenContainer(container) {
     container.style.display = "none";
@@ -94,7 +112,7 @@ function closeConfirmBox() {
     sureDiv.style.display = "none";    
 }
 
-function checkItems(contDel) {    
+function checkItems(contDel) {   
     if (indexHealth <= 6
         && event.target.textContent === "Revive"
         || event.target.textContent === "Candy apple") {
@@ -105,8 +123,9 @@ function checkItems(contDel) {
         showConfirmBox(y);
 
         yesRemove.addEventListener("click", () => {
+            console.log(dataItems[i].effect)
             if (indexHealth < 6) {
-                indexHealth += Number(dataItems[i].effect);             
+                indexHealth += Number(dataItems[i].effect);       
             } else {
                 indexHealth += 1;
             }
@@ -123,16 +142,16 @@ function checkItems(contDel) {
 
 function remove(contDel) {
     if (contDel.textContent != "...") {
-            let x= "Are you sure you want to delete this item?";
-            showConfirmBox(x);
-            yesRemove.addEventListener("click", () => {
-                contDel.innerText = "...";
-                closeConfirmBox();  
-            });
-            noRemove.addEventListener("click", () => {
-                console.log("You don't lose your item");
-                closeConfirmBox();
-            }); 
+        let x= "Are you sure you want to delete this item?";
+        showConfirmBox(x);
+        yesRemove.addEventListener("click", () => {
+            contDel.innerText = "...";
+            closeConfirmBox();  
+        });
+        noRemove.addEventListener("click", () => {
+            console.log("You don't lose your item");
+            closeConfirmBox();
+        }); 
     }
 }
 
@@ -162,7 +181,7 @@ function cancelOrUseClick(event) {
         case cancelButton[7]:
             remove(itemContainer[7])
             break;
-            case itemContainer[0]:            
+        case itemContainer[0]:    
             checkItems(itemContainer[0])
             break;
         case itemContainer[1]:
