@@ -5,6 +5,7 @@ console.log(dataWeapons);
 import { dataText } from "./quest-text.js";
 console.log(dataText);
 
+let playerName = document.getElementsByClassName('hero-name')[0];
 let intro = document.getElementById("introduction");
 let start = document.getElementById("starting-button");
 let optionOne = document.getElementById("option-1");
@@ -20,27 +21,20 @@ let containerThree = document.getElementById("container-3");
 
 
 let cancelButton = document.getElementsByClassName("fa-times-circle-o");
-let itemContainer = document.getElementsByClassName("object-name");
 let sureDiv = document.getElementById("items-yes-no");
 let sureDivText = document.getElementById("remove-text");
-let yesRemove = document.getElementById("remove-yes");
-let noRemove = document.getElementById("remove-no");
 let defenseDisplay = document.getElementsByClassName("numb-stat")[0];
 let attackDisplay = document.getElementsByClassName("numb-stat")[1];
+let objectTextDivs = document.getElementsByClassName('object-name');
+let weaponTextDivs = document.getElementsByClassName('weapon-name');
+let yesButton = document.getElementById('remove-yes');
+let noButton = document.getElementById('remove-no');
 
-function initDefense() {
-    let defense = 10 + Math.floor(Math.random() * 10) + 1;
-    defenseDisplay.innerText = defense;
-}
-
-initDefense();
-
-function initAttack() {
-    let attack = 10 + Math.floor(Math.random() * 10) + 1;
-    attackDisplay.innerText = attack;
-}
-
-initAttack();
+playerName.innerText = "Name: " + prompt("What's your name?");
+defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
+attackDisplay.innerText = 10 + dataWeapons[1].attack + Math.floor(Math.random() * 10) + 1;
+objectTextDivs[0].innerText = "Eggnog";
+weaponTextDivs[0].innerText = dataWeapons[1].name + ' - attack: +' + dataWeapons[1].attack;
 
 function hiddenContainer(container) {
     container.style.display = "none";
@@ -55,11 +49,11 @@ function unveildContainer(uContainer) {
 }
 
 function addItems(itemArray) {
-    for (let i = 0; i < itemContainer.length; i++) {
-        if (itemContainer[i].textContent === "...") {
-            itemContainer[i].innerText = itemArray.name;
+    for (let i = 0; i < objectTextDivs.length; i++) {
+        if (objectTextDivs[i].textContent === "...") {
+            objectTextDivs[i].innerText = itemArray.name;
             break;
-        } else if (i === itemContainer.length-1 && itemContainer[i].textContent != "...") {
+        } else if (i === objectTextDivs.length-1 && objectTextDivs[i].textContent != "...") {
             alert("you have no more space");
         }
 
@@ -108,9 +102,7 @@ choice(optionFour, containerTwo, containerThree, 3, dataItems[1]);
 
 
 
-let objectTextDivs = document.getElementsByClassName('object-name');
-let yesButton = document.getElementById('remove-yes');
-let noButton = document.getElementById('remove-no');
+
 
 
 
