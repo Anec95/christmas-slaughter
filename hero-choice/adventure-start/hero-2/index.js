@@ -79,7 +79,7 @@ function healthDispenser() {
 healthDispenser();
 
 function choice(element, container, uContainer, y, itemArray = "") {
-    element.ondblclick = function () {
+    element.onclick = function () {
         hiddenContainer(container);
         unveildContainer(uContainer);
         //per togliere vita
@@ -103,112 +103,182 @@ choice(start, intro, containerOne, 0);
 choice(optionOne, containerOne, containerTwo, 1, dataItems[0]);
 choice(optionFour, containerTwo, containerThree, 3, dataItems[1]);
 
-function showConfirmBox(text) {
-    sureDivText.innerText = text;
-    sureDiv.style.display = "block";    
-}
+
+
+
+
+
+let objectTextDivs = document.getElementsByClassName('object-name');
+let yesButton = document.getElementById('remove-yes');
+let noButton = document.getElementById('remove-no');
+
+
+
+// function eventRemover() {
+//     yesButton.removeEventListener('click', useItemFirstDiv);
+//     yesButton.removeEventListener('click', useItemSecondDiv);
+// }
 
 function closeConfirmBox() {
-    sureDiv.style.display = "none";    
+    sureDiv.style.display = 'none';
 }
 
-function checkItems(contDel) {   
-    if (indexHealth <= 6
-        && event.target.textContent === "Revive"
-        || event.target.textContent === "Candy apple") {
-        let n = event.target.textContent;
-        let i = dataItems.map(object => object.name).indexOf(n);
-        let y =`Are You sure to use ${dataItems[i].name}? It will make you recover ${dataItems[i].effect} of life `;
+objectTextDivs[0].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemFirstDiv);
+        noButton.addEventListener('click', closeConfirmBox);
+    }    
+}
 
-        showConfirmBox(y);
-
-        yesRemove.addEventListener("click", () => {
-            console.log(dataItems[i].effect)
-            if (indexHealth < 6) {
-                indexHealth += Number(dataItems[i].effect);       
-            } else {
-                indexHealth += 1;
-            }
-            contDel.textContent = "...";    
-            healthDispenser();
-            closeConfirmBox();  
-        });
-        noRemove.addEventListener("click", () => {
-            console.log("You don't lose your item");
-            closeConfirmBox();
-        });
+objectTextDivs[1].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemSecondDiv);
+        noButton.addEventListener('click', closeConfirmBox);
     }
 }
 
-function remove(contDel) {
-    if (contDel.textContent != "...") {
-        let x= "Are you sure you want to delete this item?";
-        showConfirmBox(x);
-        yesRemove.addEventListener("click", () => {
-            contDel.innerText = "...";
-            closeConfirmBox();  
-        });
-        noRemove.addEventListener("click", () => {
-            console.log("You don't lose your item");
-            closeConfirmBox();
-        }); 
+objectTextDivs[2].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemThirdDiv);
+        noButton.addEventListener('click', closeConfirmBox);
     }
 }
 
-function cancelOrUseClick(event) {
-    switch (event.target) {
-        case cancelButton[0]:
-            remove(itemContainer[0])
-            break;
-        case cancelButton[1]:
-            remove(itemContainer[1])
-            break;
-        case cancelButton[2]:
-            remove(itemContainer[2])
-            break;
-        case cancelButton[3]:
-            remove(itemContainer[3])
-            break;
-        case cancelButton[4]:
-            remove(itemContainer[4])   
-            break;
-        case cancelButton[5]:
-            remove(itemContainer[5])
-            break;
-        case cancelButton[6]:
-            remove(itemContainer[6])
-            break;
-        case cancelButton[7]:
-            remove(itemContainer[7])
-            break;
-        case itemContainer[0]:    
-            checkItems(itemContainer[0])
-            break;
-        case itemContainer[1]:
-            checkItems(itemContainer[1])
-            break;
-        case itemContainer[2]:
-            checkItems(itemContainer[2])
-            break;
-        case itemContainer[3]:
-            checkItems(itemContainer[3])
-            break;
-        case itemContainer[4]:
-            checkItems(itemContainer[4])   
-            break;
-        case itemContainer[5]:
-            checkItems(itemContainer[5])
-            break;
-        case itemContainer[6]:
-            checkItems(itemContainer[6])
-            break;
-        case itemContainer[7]:
-            checkItems(itemContainer[7])
-            break;
-        default:
-            console.log("default")
-            break;
+objectTextDivs[3].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemFourthDiv);
+        noButton.addEventListener('click', closeConfirmBox);
     }
 }
 
-document.getElementsByClassName("backpack")[0].onclick = (event) => cancelOrUseClick(event);
+objectTextDivs[4].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemFifthDiv);
+        noButton.addEventListener('click', closeConfirmBox);
+    }
+}
+
+objectTextDivs[5].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemSixthDiv);
+        noButton.addEventListener('click', closeConfirmBox);
+    }
+}
+
+objectTextDivs[6].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemSeventhDiv);
+        noButton.addEventListener('click', closeConfirmBox);
+    }
+}
+
+objectTextDivs[7].onclick = function() {
+    if ((indexHealth <= 6 && this.textContent === "Revive")
+        || (indexHealth <= 6 && this.textContent === "Candy apple")
+        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        // eventRemover()
+        sureDiv.style.display = 'block';
+        sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
+        yesButton.addEventListener('click', useItemEighthDiv);
+        noButton.addEventListener('click', closeConfirmBox);
+    }
+}
+
+function whichItem(number) {
+    if (indexHealth < 6 &&
+        objectTextDivs[number].textContent === 'Revive') {
+        indexHealth += 2;        
+    } else if (indexHealth === 6 &&
+        objectTextDivs[number].textContent === 'Revive') {
+        indexHealth += 1;
+    } else if (indexHealth <= 6 &&
+        objectTextDivs[number].textContent === 'Candy apple') {
+        indexHealth += 1;        
+    } else if (indexHealth < 5 &&
+        objectTextDivs[number].textContent === 'Eggnog') {
+        indexHealth += 3;
+    } else if (indexHealth === 5  &&
+        objectTextDivs[number].textContent === 'Eggnog') {
+        indexHealth += 2;
+    } else if (indexHealth === 6  &&
+        objectTextDivs[number].textContent === 'Eggnog') {
+        indexHealth += 1;
+    }
+    objectTextDivs[number].innerText = '...';
+    healthDispenser();
+}
+
+function useItemFirstDiv() {
+    whichItem(0)
+    closeConfirmBox()
+}
+
+function useItemSecondDiv() {
+    whichItem(1)
+    closeConfirmBox()
+}
+
+function useItemThirdDiv() {
+    whichItem(2)
+    closeConfirmBox()    
+}
+
+function useItemFourthDiv() {
+    whichItem(3)
+    closeConfirmBox()    
+}
+
+function useItemFifthDiv() {
+    whichItem(4)
+    closeConfirmBox()    
+}
+
+function useItemSixthDiv() {
+    whichItem(5)
+    closeConfirmBox()    
+}
+
+function useItemSeventhDiv() {
+    whichItem(6)
+    closeConfirmBox()    
+}
+
+function useItemEighthDiv() {
+    whichItem(7)
+    closeConfirmBox()    
+}
