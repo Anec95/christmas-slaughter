@@ -36,6 +36,8 @@ attackDisplay.innerText = 10 + dataWeapons[1].attack + Math.floor(Math.random() 
 objectTextDivs[0].innerText = "Eggnog";
 weaponTextDivs[0].innerText = dataWeapons[1].name + ' - attack: +' + dataWeapons[1].attack;
 
+// attackDisplay.textContent = Number(attackDisplay.textContent) + 30;
+
 function hiddenContainer(container) {
     container.style.display = "none";
 }
@@ -106,10 +108,16 @@ choice(optionFour, containerTwo, containerThree, 3, dataItems[1]);
 
 
 
-// function eventRemover() {
-//     yesButton.removeEventListener('click', useItemFirstDiv);
-//     yesButton.removeEventListener('click', useItemSecondDiv);
-// }
+function eventRemover() {
+    yesButton.removeEventListener('click', useItemFirstDiv);
+    yesButton.removeEventListener('click', useItemSecondDiv);
+    yesButton.removeEventListener('click', useItemThirdDiv);
+    yesButton.removeEventListener('click', useItemFourthDiv);
+    yesButton.removeEventListener('click', useItemFifthDiv);
+    yesButton.removeEventListener('click', useItemSixthDiv);
+    yesButton.removeEventListener('click', useItemSeventhDiv);
+    yesButton.removeEventListener('click', useItemEighthDiv);
+}
 
 function closeConfirmBox() {
     sureDiv.style.display = 'none';
@@ -119,7 +127,7 @@ objectTextDivs[0].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemFirstDiv);
@@ -131,7 +139,7 @@ objectTextDivs[1].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemSecondDiv);
@@ -143,7 +151,7 @@ objectTextDivs[2].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemThirdDiv);
@@ -155,7 +163,7 @@ objectTextDivs[3].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemFourthDiv);
@@ -167,7 +175,7 @@ objectTextDivs[4].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemFifthDiv);
@@ -179,7 +187,7 @@ objectTextDivs[5].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemSixthDiv);
@@ -191,7 +199,7 @@ objectTextDivs[6].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemSeventhDiv);
@@ -203,7 +211,7 @@ objectTextDivs[7].onclick = function() {
     if ((indexHealth <= 6 && this.textContent === "Revive")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
         || (indexHealth <= 6 && this.textContent === "Eggnog")) {
-        // eventRemover()
+        eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
         yesButton.addEventListener('click', useItemEighthDiv);
