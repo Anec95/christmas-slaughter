@@ -8,9 +8,9 @@ body {
 header {
     position: absolute;
     left: 50%;
-    margin-left: -400px;
+    transform: translateX(-50%);
 
-    width: 800px;
+    width: 900px;
     text-align: center;
     padding-top: 50px;
     font-variant: small-caps;
