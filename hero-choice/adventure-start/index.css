@@ -4,13 +4,15 @@ body {
     color: rgba(166, 16, 34, 1);
     background-color: rgb(70, 52, 33);
     user-select: none;
+    overflow: hidden;
 }
 
 header {
     height: 5vh;
 }
 
-.enter-your-name-panel {
+.enter-your-name-panel,
+.lost-panel {
     position: absolute;
     width: 50vw;
     height: 40vh;
@@ -22,6 +24,10 @@ header {
     border: 3px solid rgba(166, 16, 34, 1);
     border-radius: 10px;
     border-radius: 10px;
+}
+
+.lost-panel {
+    display: none;
 }
 
 .title-hero-name {
@@ -266,7 +272,7 @@ header {
     justify-content: end;
     width: 100%;
     position: absolute;
-    bottom: -100px;
+    bottom: -50px;
 }
 
 /* .mountain-1 {
