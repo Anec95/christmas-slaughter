@@ -2,6 +2,8 @@ import { dataItems } from "./items.js";
 console.log(dataItems);
 import { dataWeapons } from "./items.js";
 console.log(dataWeapons);
+import { dataHeroNames } from "./items.js";
+console.log(dataHeroNames);
 import { dataText } from "./quest-text.js";
 console.log(dataText);
 
@@ -29,8 +31,24 @@ let objectTextDivs = document.getElementsByClassName('object-name');
 let weaponTextDivs = document.getElementsByClassName('weapon-name');
 let yesButton = document.getElementById('remove-yes');
 let noButton = document.getElementById('remove-no');
+let nameHeroChoicePanel = document.getElementsByClassName('enter-your-name-panel')[0];
+let textBoxHeroName = document.getElementById('text-area-box');
+let heroNameConfirmBtn = document.getElementById('corfim-button');
 
-playerName.innerText = "Name: " + prompt("What's your name?");
+
+heroNameConfirmBtn.onclick = function confirmName() {
+    let nameHero = textBoxHeroName.value;
+    console.log(nameHero)
+    if (nameHero === '') {
+        let indexName = Math.floor(Math.random() * 16) + 1;
+        playerName.innerText = `Name: ${dataHeroNames[indexName]}`;
+    } else {
+        playerName.innerText = `Name: ${nameHero}`;
+    };
+    nameHeroChoicePanel.style.display = 'none';
+}
+
+// playerName.innerText = "Name: " + prompt("What's your name?");
 defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
 attackDisplay.innerText = 10 + dataWeapons[1].attack + Math.floor(Math.random() * 10) + 1;
 objectTextDivs[0].innerText = "Eggnog";

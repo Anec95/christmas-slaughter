@@ -2,21 +2,21 @@ export const dataWeapons = [
     {
         "name": "Excalibur",
         "type": "sword",
-        "attack": "3",
+        "attack": 3,
         "durability": "5",
         "weight": "3"
     },
     {
-        "name": "Cruel",
-        "type": "axe",
-        "attack": "5",
+        "name": "Simple Candy Sword",
+        "type": "sword",
+        "attack": 3,
         "durability": "7",
         "weight": "3"
     },
     {
         "name": "Jambo",
         "type": "spear",
-        "attack": "5",
+        "attack": 5,
         "durability": "7",
         "weight": "3"
     }
@@ -36,3 +36,22 @@ export const dataItems = [
         "quantity": "2"
     }
 ]
+
+export const dataHeroNames = ['Arcibaldo',
+                            'Ludmilla',
+                            'Imperione',
+                            'Cleonice',
+                            'El Mocheno',
+                            'Glenda',
+                            'Romeo, Er Mejo',
+                            'Fiammetta',
+                            'Amilcare',
+                            'Tullia',
+                            'Gioacchino',
+                            'Consuelo',
+                            'Furius Orlando',
+                            'Nausica',
+                            'Calepino',
+                            'Flaminia']
+    
+    
