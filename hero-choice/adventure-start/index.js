@@ -155,25 +155,42 @@ choiceFight(optionFour, containerTwo, containerThree, 0, dataItems[1]);
 
 
 function fight() {
-    let attack = Number(attackDisplay.textContent);
-    let monsterLife = dataMonster[0].life;
-    let differenceAtkDfns = attack - dataMonster[0].defense;    
+        let attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+        let monsterLife = dataMonster[0].life;
+        let differenceAtkDfns = attack - dataMonster[0].defense; 
     
-    while (monsterLife > 0 && indexHealth > 0) {
+    while (monsterLife > 0 && indexHealth > 0) {        
         if (differenceAtkDfns <= -4) {
             indexHealth -= 4;
             monsterLife -= 1;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            alert(`You feel like shit, lost four`);            
+            alert(`Life monster is ${monsterLife}, you have done only 1 damage`);           
         } else if (differenceAtkDfns > -4 && differenceAtkDfns <= 0) {
             indexHealth -= 3;
             monsterLife -= 2;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            alert(`Damn, three lives`);
+            alert(`Life monster is ${monsterLife}, you have done only 2 damage`);
+            alert(attack)
         } else if (differenceAtkDfns > 0 && differenceAtkDfns < 4) {
             indexHealth -= 2;
             monsterLife -= 3;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            alert(`C--, you lose two`)
+            alert(`Life monster is ${monsterLife}, you have done 3 damage`);
+            alert(attack)
         } else if (differenceAtkDfns >= 4 && differenceAtkDfns < 6) {
             indexHealth -= 1;
             monsterLife -= 4;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            alert(`Nice hit, you lost only one`);
+            alert(`Life monster is ${monsterLife}, you have done 4 damage`);
+            alert(attack)
         } else {
             monsterLife -= 6;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            alert(`You are a master, you inflict 6 damage`);
         }
     };
     healthDispenser();
