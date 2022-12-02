@@ -36,6 +36,7 @@ let noButton = document.getElementById('remove-no');
 let nameHeroChoicePanel = document.getElementsByClassName('enter-your-name-panel')[0];
 let textBoxHeroName = document.getElementById('text-area-box');
 let heroNameConfirmBtn = document.getElementById('corfim-button');
+let panelLost = document.getElementsByClassName('lost-panel')[0];
 
 
 heroNameConfirmBtn.onclick = function confirmName() {
@@ -95,10 +96,13 @@ const health = document.getElementsByClassName("health")[0];
 let indexHealth = 7;
 
 function healthDispenser() {
+    if (indexHealth < 0) {
+        indexHealth = 0;
+    }
     let fullHearth = new Array(indexHealth).fill('<i class="fa fa-heart" aria-hidden="true"></i>');
     let emptyHearth = new Array(7-indexHealth).fill('<i class="fa fa-heart-o" aria-hidden="true"></i>');
-
-    health.innerHTML = fullHearth.concat(emptyHearth).join("");
+    
+    health.innerHTML = fullHearth.concat(emptyHearth).join("");    
 }
 
 healthDispenser();
@@ -111,8 +115,7 @@ function choice(element, container, uContainer, y, itemArray = "", funcFight =''
         indexHealth-=y;
         
         if (indexHealth <= 0) {
-            alert("You are died")
-            return;
+            panelLost.style.display = 'block';
         }
         healthDispenser();
         //per aggiungere item
@@ -131,7 +134,7 @@ function choiceFight(element, container, uContainer, y, itemArray = "") {
         indexHealth-=y;
         
         if (indexHealth <= 0) {
-            alert("You are died")
+            panelLost.style.display = 'block';
             return;
         }
         healthDispenser();
@@ -177,7 +180,7 @@ function fight() {
     if (monsterLife <= 0){
         alert('monster dead')
     } else {
-        alert('you are died')
+        panelLost.style.display = 'block';
     }
     console.log(monsterLife)
 }
