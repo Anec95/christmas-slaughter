@@ -48,10 +48,19 @@ heroNameConfirmBtn.onclick = function confirmName() {
     nameHeroChoicePanel.style.display = 'none';
 }
 
+function startGivingItems() {
+    let numberLengthItems = dataItems.length-1;
+    let object = Math.floor(Math.random() * numberLengthItems);
+    addItems(dataItems[object])    
+}
+
+startGivingItems();
+startGivingItems();
+
 // playerName.innerText = "Name: " + prompt("What's your name?");
 defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
 attackDisplay.innerText = 10 + dataWeapons[1].attack + Math.floor(Math.random() * 10) + 1;
-objectTextDivs[0].innerText = "Eggnog";
+// objectTextDivs[0].innerText = "Eggnog";
 weaponTextDivs[0].innerText = dataWeapons[1].name + ' - attack: +' + dataWeapons[1].attack;
 
 // attackDisplay.textContent = Number(attackDisplay.textContent) + 30;

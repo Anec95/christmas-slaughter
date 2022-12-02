@@ -26,14 +26,17 @@ export const dataItems = [
     {
         "name": "Revive",
         "type": "potion",
-        "effect": "2", //HEALTH
-        "quantity": "1"
+        "effect": 2, //HEALTH
     },
     {
         "name": "Candy apple",
         "type": "food",
-        "effect": 1, //HEALTH
-        "quantity": "2"
+        "effect": 1, //HEALTH"
+    },
+    {
+        "name": "Eggnog",
+        "type": "beverage",
+        "effect": 3, //HEALTH"
     }
 ]
 
