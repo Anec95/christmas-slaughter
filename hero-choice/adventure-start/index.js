@@ -6,6 +6,8 @@ import { dataHeroNames } from "./items.js";
 console.log(dataHeroNames);
 import { dataText } from "./quest-text.js";
 console.log(dataText);
+import { dataMonster } from "./monster.js";
+console.log(dataMonster);
 
 let playerName = document.getElementsByClassName('hero-name')[0];
 let intro = document.getElementById("introduction");
@@ -40,7 +42,7 @@ heroNameConfirmBtn.onclick = function confirmName() {
     let nameHero = textBoxHeroName.value;
     console.log(nameHero)
     if (nameHero === '') {
-        let indexName = Math.floor(Math.random() * 16) + 1;
+        let indexName = Math.floor(Math.random() * dataHeroNames.length-1) + 1;
         playerName.innerText = `Name: ${dataHeroNames[indexName]}`;
     } else {
         playerName.innerText = `Name: ${nameHero}`;
@@ -48,14 +50,14 @@ heroNameConfirmBtn.onclick = function confirmName() {
     nameHeroChoicePanel.style.display = 'none';
 }
 
-function startGivingItems() {
+function startGivingItem() {
     let numberLengthItems = dataItems.length-1;
     let object = Math.floor(Math.random() * numberLengthItems);
     addItems(dataItems[object])    
 }
 
-startGivingItems();
-startGivingItems();
+startGivingItem();
+startGivingItem();
 
 // playerName.innerText = "Name: " + prompt("What's your name?");
 defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
@@ -101,7 +103,7 @@ function healthDispenser() {
 
 healthDispenser();
 
-function choice(element, container, uContainer, y, itemArray = "") {
+function choice(element, container, uContainer, y, itemArray = "", funcFight ='') {
     element.onclick = function () {
         hiddenContainer(container);
         unveildContainer(uContainer);
@@ -117,17 +119,68 @@ function choice(element, container, uContainer, y, itemArray = "") {
         if (itemArray != "") {
             addItems(itemArray);   
         }
-             
+        //FIGHT
+    }; 
+}
+
+function choiceFight(element, container, uContainer, y, itemArray = "") {
+    element.onclick = function () {
+        hiddenContainer(container);
+        unveildContainer(uContainer);
+        //per togliere vita
+        indexHealth-=y;
+        
+        if (indexHealth <= 0) {
+            alert("You are died")
+            return;
+        }
+        healthDispenser();
+        //per aggiungere item
+        if (itemArray != "") {
+            addItems(itemArray);   
+        }
+        //FIGHT
+        fight();
     }; 
 }
 
 
-choice(start, intro, containerOne, 0);
-choice(optionOne, containerOne, containerTwo, 1, dataItems[0]);
-choice(optionFour, containerTwo, containerThree, 3, dataItems[1]);
+choice(start, intro, containerOne, 1);
+choice(optionOne, containerOne, containerTwo, 0, dataItems[0]);
+choiceFight(optionFour, containerTwo, containerThree, 0, dataItems[1]);
 
 
 
+function fight() {
+    let attack = Number(attackDisplay.textContent);
+    let monsterLife = dataMonster[0].life;
+    let differenceAtkDfns = attack - dataMonster[0].defense;    
+    
+    while (monsterLife > 0 && indexHealth > 0) {
+        if (differenceAtkDfns <= -4) {
+            indexHealth -= 4;
+            monsterLife -= 1;
+        } else if (differenceAtkDfns > -4 && differenceAtkDfns <= 0) {
+            indexHealth -= 3;
+            monsterLife -= 2;
+        } else if (differenceAtkDfns > 0 && differenceAtkDfns < 4) {
+            indexHealth -= 2;
+            monsterLife -= 3;
+        } else if (differenceAtkDfns >= 4 && differenceAtkDfns < 6) {
+            indexHealth -= 1;
+            monsterLife -= 4;
+        } else {
+            monsterLife -= 6;
+        }
+    };
+    healthDispenser();
+    if (monsterLife <= 0){
+        alert('monster dead')
+    } else {
+        alert('you are died')
+    }
+    console.log(monsterLife)
+}
 
 
 
@@ -163,9 +216,10 @@ objectTextDivs[0].onclick = function() {
 }
 
 objectTextDivs[1].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -175,9 +229,10 @@ objectTextDivs[1].onclick = function() {
 }
 
 objectTextDivs[2].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -187,9 +242,10 @@ objectTextDivs[2].onclick = function() {
 }
 
 objectTextDivs[3].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -199,9 +255,10 @@ objectTextDivs[3].onclick = function() {
 }
 
 objectTextDivs[4].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -211,9 +268,10 @@ objectTextDivs[4].onclick = function() {
 }
 
 objectTextDivs[5].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -223,9 +281,10 @@ objectTextDivs[5].onclick = function() {
 }
 
 objectTextDivs[6].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -235,9 +294,10 @@ objectTextDivs[6].onclick = function() {
 }
 
 objectTextDivs[7].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Revive" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Eggnog")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
