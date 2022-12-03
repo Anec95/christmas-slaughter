@@ -60,25 +60,22 @@ function startGivingItem() {
 startGivingItem();
 startGivingItem();
 
-// playerName.innerText = "Name: " + prompt("What's your name?");
+
 defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
 attackDisplay.innerText = 10 + dataWeapons[1].attack + Math.floor(Math.random() * 10) + 1;
-// objectTextDivs[0].innerText = "Eggnog";
 weaponTextDivs[0].innerText = dataWeapons[1].name + ' - attack: +' + dataWeapons[1].attack;
 
-// attackDisplay.textContent = Number(attackDisplay.textContent) + 30;
+// function hiddenContainer(container) {
+//     container.style.display = "none";
+// }
 
-function hiddenContainer(container) {
-    container.style.display = "none";
-}
+// hiddenContainer(containerOne);
+// hiddenContainer(containerTwo);
+// hiddenContainer(containerThree);
 
-hiddenContainer(containerOne);
-hiddenContainer(containerTwo);
-hiddenContainer(containerThree);
-
-function unveildContainer(uContainer) {
-    uContainer.style.display = "block";
-}
+// function unveildContainer(uContainer) {
+//     uContainer.style.display = "block";
+// }
 
 function addItems(itemArray) {
     for (let i = 0; i < objectTextDivs.length; i++) {
@@ -107,50 +104,50 @@ function healthDispenser() {
 
 healthDispenser();
 
-function choice(element, container, uContainer, y, itemArray = "", funcFight ='') {
-    element.onclick = function () {
-        hiddenContainer(container);
-        unveildContainer(uContainer);
-        //per togliere vita
-        indexHealth-=y;
+// function choice(element, container, uContainer, y, itemArray = "", funcFight ='') {
+//     element.onclick = function () {
+//         hiddenContainer(container);
+//         unveildContainer(uContainer);
+//         //per togliere vita
+//         indexHealth-=y;
         
-        if (indexHealth <= 0) {
-            panelLost.style.display = 'block';
-        }
-        healthDispenser();
-        //per aggiungere item
-        if (itemArray != "") {
-            addItems(itemArray);   
-        }
-        //FIGHT
-    }; 
-}
+//         if (indexHealth <= 0) {
+//             panelLost.style.display = 'block';
+//         }
+//         healthDispenser();
+//         //per aggiungere item
+//         if (itemArray != "") {
+//             addItems(itemArray);   
+//         }
+//         //FIGHT
+//     }; 
+// }
 
-function choiceFight(element, container, uContainer, y, itemArray = "") {
-    element.onclick = function () {
-        hiddenContainer(container);
-        unveildContainer(uContainer);
-        //per togliere vita
-        indexHealth-=y;
+// function choiceFight(element, container, uContainer, y, itemArray = "") {
+//     element.onclick = function () {
+//         hiddenContainer(container);
+//         unveildContainer(uContainer);
+//         //per togliere vita
+//         indexHealth-=y;
         
-        if (indexHealth <= 0) {
-            panelLost.style.display = 'block';
-            return;
-        }
-        healthDispenser();
-        //per aggiungere item
-        if (itemArray != "") {
-            addItems(itemArray);   
-        }
-        //FIGHT
-        fight();
-    }; 
-}
+//         if (indexHealth <= 0) {
+//             panelLost.style.display = 'block';
+//             return;
+//         }
+//         healthDispenser();
+//         //per aggiungere item
+//         if (itemArray != "") {
+//             addItems(itemArray);   
+//         }
+//         //FIGHT
+//         fight();
+//     }; 
+// }
 
 
-choice(start, intro, containerOne, 1);
-choice(optionOne, containerOne, containerTwo, 0, dataItems[0]);
-choiceFight(optionFour, containerTwo, containerThree, 0, dataItems[1]);
+// choice(start, intro, containerOne, 1);
+// choice(optionOne, containerOne, containerTwo, 0, dataItems[0]);
+// choiceFight(optionFour, containerTwo, containerThree, 0, dataItems[1]);
 
 
 
@@ -386,3 +383,72 @@ function useItemEighthDiv() {
     whichItem(7)
     closeConfirmBox()    
 }
+
+let options = document.getElementsByClassName('option');
+let textStory = document.getElementById('story');
+
+function textDivChecker() {
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].textContent === '') {
+            options[i].style.display = 'none';
+        } else {
+            options[i].style.display = 'block';
+        }
+    }
+}
+
+textDivChecker();
+
+
+function optionOperator(indexText) {
+    textStory.innerText = dataText[indexText].text;
+    optionOne.innerText = dataText[indexText].option1;
+    optionTwo.innerText = dataText[indexText].option2;
+    optionThree.innerText = dataText[indexText].option3;
+    textDivChecker();
+}
+
+function statsOperator(dmg, itemArray) {
+    //per togliere vita
+    indexHealth-=dmg;
+        
+    if (indexHealth <= 0) {
+        panelLost.style.display = 'block';
+        return;
+    }
+    healthDispenser();
+    //per aggiungere item
+    if (itemArray != "") {
+        addItems(itemArray);   
+    }
+}
+
+function choiseMaker(event) {    
+    switch (event.target) {
+        case options[0]:
+            if (optionOne.textContent === dataText[0].option1) {
+                optionOperator(1);
+            } else if (optionOne.textContent === dataText[1].option1) {
+                optionOperator(2);
+                statsOperator(1, dataItems[1])
+            } else if (optionOne.textContent === dataText[2].option1) {
+                optionOperator(3);
+            } else if (optionOne.textContent === dataText[3].option1) {
+                optionOperator(4);
+                fight();
+            }
+            break;
+        case options[0]:
+            break;
+        case options[0]:
+            break;
+        default:
+            break;
+    }
+    
+}
+
+document.getElementsByClassName("options-container")[0].onclick = (event) => choiseMaker(event);
+
+      
+        
