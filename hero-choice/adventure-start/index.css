@@ -169,7 +169,12 @@ header {
 .object-name,
 .weapon-name {
     flex: 1;    
-    margin-left: 5px;
+    margin: 0 5px;
+}
+
+.weapon-name {
+    padding: 1px;
+    border-radius: 4px;
 }
 
 .fa-times-circle-o {    

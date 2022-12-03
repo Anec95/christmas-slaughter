@@ -30,6 +30,7 @@ let sureDivText = document.getElementById("remove-text");
 let defenseDisplay = document.getElementsByClassName("numb-stat")[0];
 let attackDisplay = document.getElementsByClassName("numb-stat")[1];
 let objectTextDivs = document.getElementsByClassName('object-name');
+let weaponCont = document.getElementsByClassName('weapon');
 let weaponTextDivs = document.getElementsByClassName('weapon-name');
 let yesButton = document.getElementById('remove-yes');
 let noButton = document.getElementById('remove-no');
@@ -62,8 +63,15 @@ startGivingItem();
 
 
 defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
-attackDisplay.innerText = 10 + dataWeapons[1].attack + Math.floor(Math.random() * 10) + 1;
-weaponTextDivs[0].innerText = dataWeapons[1].name + ' - attack: +' + dataWeapons[1].attack;
+let attackHero = 10 + Math.floor(Math.random() * 10) + 1;
+weaponTextDivs[0].innerText = dataWeapons[1].name //+ ' - attack: +' + dataWeapons[1].attack;
+weaponTextDivs[1].innerText = dataWeapons[2].name //+ ' - attack: +' + dataWeapons[1].attack;
+
+function displayHeroAttack(adds) {
+    attackDisplay.innerText = attackHero + adds;
+}
+
+displayHeroAttack(0);
 
 // function hiddenContainer(container) {
 //     container.style.display = "none";
@@ -450,5 +458,52 @@ function choiseMaker(event) {
 
 document.getElementsByClassName("options-container")[0].onclick = (event) => choiseMaker(event);
 
-      
+
+// weaponCont
+// weaponTextDivs
+
+
+
+weaponTextDivs[0].onclick = function() {
+    this.style.background = 'lightcoral';
+    if (weaponTextDivs[1].style.background === 'lightcoral') {
+        weaponTextDivs[1].style.background = 'transparent';
+        let otherWeapon = dataWeapons.findIndex(object => {
+            return object.name === weaponTextDivs[1].textContent            
+        })
+        displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
+    }
+
+    if (this.style.background === 'lightcoral') {
+        let whichWeapon = dataWeapons.findIndex(object => {
+            return object.name === this.textContent            
+        }) 
+        displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
+    } else if (this.style.background != 'lightcoral') {
+        displayHeroAttack(0);
+    }
+}
+
+weaponTextDivs[1].onclick = function() {
+    this.style.background = 'lightcoral';
+    if (weaponTextDivs[0].style.background === 'lightcoral') {
+        weaponTextDivs[0].style.background = 'transparent';
+        let otherWeapon = dataWeapons.findIndex(object => {
+            return object.name === weaponTextDivs[0].textContent            
+        })
+        displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
+    }
+
+    if (this.style.background === 'lightcoral') {
+        let whichWeapon = dataWeapons.findIndex(object => {
+            return object.name === this.textContent            
+        }) 
+        displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
+    } else if (this.style.background != 'lightcoral') {
+        displayHeroAttack(0);
+    }
+}
+
         
+
+
