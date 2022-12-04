@@ -1,110 +1,42 @@
-// function showConfirmBox(text) {
-//     sureDivText.innerText = text;
-//     sureDiv.style.display = "block";    
-// }
-
-// function closeConfirmBox() {
-//     sureDiv.style.display = "none";
-//     yesRemove.removeEventListener("click", useItems);    
-// }
-
-// function checkItems(contDel) {   
-//     if (indexHealth <= 6
-//         && event.target.textContent === "Revive"
-//         || event.target.textContent === "Candy apple") {
-//         let n = event.target.textContent;
-//         let i = dataItems.map(object => object.name).indexOf(n);
-//         let y =`Are You sure to use ${dataItems[i].name}? It will make you recover ${dataItems[i].effect} of life `;
-
-//         showConfirmBox(y);
-
-//         yesRemove.addEventListener("click", () => {        
-//             console.log(dataItems[i].effect)
-//             if (indexHealth < 6) {
-//                 indexHealth += Number(dataItems[i].effect);       
-//             } else {
-//                 indexHealth += 1;
-//             }
-//             contDel.textContent = "...";    
-//             healthDispenser();
-//             closeConfirmBox();
-//         });
-//         noRemove.addEventListener("click", () => {
-//             console.log("You don't lose your item");
-//             closeConfirmBox();
-//         });
+// function eventRemover() {
+//     for (i = 0; i< objectTextDivs.lenght; i++){
+//        yesButton.removeEventListener('click', () => {useItemFirstDiv(i)}); 
 //     }
+
+    
+
+
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(1)});
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(2)});
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(3)});
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(4)});
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(5)});
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(6)});
+//     // yesButton.removeEventListener('click', () => {useItemFirstDiv(7)});
 // }
 
-// function remove(contDel) {
-//     if (contDel.textContent != "...") {
-//         let x= "Are you sure you want to delete this item?";
-//         showConfirmBox(x);
-//         yesRemove.addEventListener("click", () => {
-//             contDel.innerText = "...";
-//             closeConfirmBox();  
-//         });
-//         noRemove.addEventListener("click", () => {
-//             console.log("You don't lose your item");
-//             closeConfirmBox();
-//         }); 
-//     }
+
+
+// function use(numberDiv) {
+//     if ((indexHealth <= 6 && event.target.textContent === "Revive")
+//         || (indexHealth <= 6 && event.target.textContent === "Candy apple")
+//         || (indexHealth <= 6 && event.target.textContent === "Eggnog")) {
+//         eventRemover()
+//         sureDiv.style.display = 'block';
+//         sureDivText.innerText = `Are you sure you want to use ${event.target.textContent}?`;
+//         yesButton.addEventListener('click', () => {useItemFirstDiv(numberDiv)});
+//         noButton.addEventListener('click', closeConfirmBox);
+//     }    
 // }
 
-// function cancelOrUseClick(event) {
-//     switch (event.target) {
-//         case cancelButton[0]:
-//             remove(itemContainer[0])
-//             break;
-//         case cancelButton[1]:
-//             remove(itemContainer[1])
-//             break;
-//         case cancelButton[2]:
-//             remove(itemContainer[2])
-//             break;
-//         case cancelButton[3]:
-//             remove(itemContainer[3])
-//             break;
-//         case cancelButton[4]:
-//             remove(itemContainer[4])   
-//             break;
-//         case cancelButton[5]:
-//             remove(itemContainer[5])
-//             break;
-//         case cancelButton[6]:
-//             remove(itemContainer[6])
-//             break;
-//         case cancelButton[7]:
-//             remove(itemContainer[7])
-//             break;
-//         case itemContainer[0]:    
-//             checkItems(itemContainer[0])
-//             break;
-//         case itemContainer[1]:
-//             checkItems(itemContainer[1])
-//             break;
-//         case itemContainer[2]:
-//             checkItems(itemContainer[2])
-//             break;
-//         case itemContainer[3]:
-//             checkItems(itemContainer[3])
-//             break;
-//         case itemContainer[4]:
-//             checkItems(itemContainer[4])   
-//             break;
-//         case itemContainer[5]:
-//             checkItems(itemContainer[5])
-//             break;
-//         case itemContainer[6]:
-//             checkItems(itemContainer[6])
-//             break;
-//         case itemContainer[7]:
-//             checkItems(itemContainer[7])
-//             break;
-//         default:
-//             console.log("default")
-//             break;
-//     }
-// }
+// objectTextDivs[0].onclick = () => {use(0)} ;
+// objectTextDivs[1].onclick = () => {use(1)} ;
+// objectTextDivs[2].onclick = () => {use(2)} ;
+// objectTextDivs[3].onclick = () => {use(3)} ;
+// objectTextDivs[4].onclick = () => {use(4)} ;
+// objectTextDivs[5].onclick = () => {use(5)} ;
+// objectTextDivs[6].onclick = () => {use(6)} ;
+// objectTextDivs[7].onclick = () => {use(7)} ;
 
-// document.getElementsByClassName("backpack")[0].onclick = (event) => cancelOrUseClick(event);
+
+

@@ -131,12 +131,12 @@ header {
     border-radius: 4px;
     margin-top: 5px;
     width: 50px;
-    height: 25px;   
+    height: 25px;
 }
 
 #remove-yes:hover,
 #remove-no:hover {
-    cursor: help;  
+    cursor: help;
 }
 
 #remove-yes {
@@ -148,7 +148,7 @@ header {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 25px);
     gap: 10px;
-    margin: 20px 20px;    
+    margin: 20px 20px;
 }
 
 .object-title {
@@ -157,6 +157,7 @@ header {
 }
 
 .object {
+    position: relative;
     margin: 0 20px;
     border: 3px double rgba(166, 16, 34, 1);
     border-radius: 8px;
@@ -166,9 +167,20 @@ header {
     align-items: center;
 }
 
+.over-div-effect {
+    position: absolute;
+    right: -20px;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    color: rgb(255, 254, 239);
+    background-color: rgba(166, 16, 34, 0.8);
+    display: none;
+}
+
 .object-name,
 .weapon-name {
-    flex: 1;    
+    flex: 1;
     margin: 0 5px;
 }
 
@@ -177,7 +189,7 @@ header {
     border-radius: 4px;
 }
 
-.fa-times-circle-o {    
+.fa-times-circle-o {
     margin-right: 2px;
     padding-top: 2px;
 }
@@ -196,15 +208,15 @@ header {
 .fight-class {
     display: flex;
 
-    height: 100px;    
+    height: 100px;
 }
 
-.weapon {    
+.weapon {
     flex-direction: column;
     align-items: space-around;
     justify-content: center;
     flex: 2;
-    margin: 20px;  
+    margin: 20px;
 }
 
 .weapon-1 {

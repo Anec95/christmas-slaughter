@@ -210,6 +210,7 @@ function fight() {
 
 
 
+
 function eventRemover() {
     yesButton.removeEventListener('click', useItemFirstDiv);
     yesButton.removeEventListener('click', useItemSecondDiv);
@@ -226,9 +227,9 @@ function closeConfirmBox() {
 }
 
 objectTextDivs[0].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Revive")
+    if ((indexHealth <= 6 && this.textContent === "Eggnog")
         || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Eggnog")) {
+        || (indexHealth <= 6 && this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -239,9 +240,9 @@ objectTextDivs[0].onclick = function() {
 
 objectTextDivs[1].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -252,9 +253,9 @@ objectTextDivs[1].onclick = function() {
 
 objectTextDivs[2].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -265,9 +266,9 @@ objectTextDivs[2].onclick = function() {
 
 objectTextDivs[3].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -278,9 +279,9 @@ objectTextDivs[3].onclick = function() {
 
 objectTextDivs[4].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -291,9 +292,9 @@ objectTextDivs[4].onclick = function() {
 
 objectTextDivs[5].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -304,9 +305,9 @@ objectTextDivs[5].onclick = function() {
 
 objectTextDivs[6].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -317,9 +318,9 @@ objectTextDivs[6].onclick = function() {
 
 objectTextDivs[7].onclick = function() {
     if ((indexHealth <= 6) &&
-    (this.textContent === "Revive" ||
+    (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Eggnog")) {
+    this.textContent === "Bombardino")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -330,22 +331,22 @@ objectTextDivs[7].onclick = function() {
 
 function whichItem(number) {
     if (indexHealth < 6 &&
-        objectTextDivs[number].textContent === 'Revive') {
+        objectTextDivs[number].textContent === 'Eggnog') {
         indexHealth += 2;        
     } else if (indexHealth === 6 &&
-        objectTextDivs[number].textContent === 'Revive') {
+        objectTextDivs[number].textContent === 'Eggnog') {
         indexHealth += 1;
     } else if (indexHealth <= 6 &&
         objectTextDivs[number].textContent === 'Candy apple') {
         indexHealth += 1;        
     } else if (indexHealth < 5 &&
-        objectTextDivs[number].textContent === 'Eggnog') {
+        objectTextDivs[number].textContent === 'Bombardino') {
         indexHealth += 3;
     } else if (indexHealth === 5  &&
-        objectTextDivs[number].textContent === 'Eggnog') {
+        objectTextDivs[number].textContent === 'Bombardino') {
         indexHealth += 2;
     } else if (indexHealth === 6  &&
-        objectTextDivs[number].textContent === 'Eggnog') {
+        objectTextDivs[number].textContent === 'Bombardino') {
         indexHealth += 1;
     }
     objectTextDivs[number].innerText = '...';
@@ -392,6 +393,49 @@ function useItemEighthDiv() {
     closeConfirmBox()    
 }
 
+
+
+// per mettere a display l'effetto dell'oggetto
+let overDiv = document.getElementsByClassName('over-div-effect');
+
+function displayEffectItemOver(numberODiv) {
+    if (event.target.textContent != '...') {
+        overDiv[numberODiv].style.display = 'block';
+        if(event.target.textContent === 'Candy apple') {
+            overDiv[numberODiv].innerText = `Using it you will gain 1 life`;
+        } else if (event.target.textContent === 'Bombardino') {
+            overDiv[numberODiv].innerText = `Using it you will gain 3 life`;
+        } else if(event.target.textContent === 'Eggnog') {
+            overDiv[numberODiv].innerText = `Using it you will gain 2 life`;
+        }
+    }  
+}
+
+objectTextDivs[0].onmouseover = function(){displayEffectItemOver(0)};
+objectTextDivs[1].onmouseover = function(){displayEffectItemOver(1)};
+objectTextDivs[2].onmouseover = function(){displayEffectItemOver(2)};
+objectTextDivs[3].onmouseover = function(){displayEffectItemOver(3)};
+objectTextDivs[4].onmouseover = function(){displayEffectItemOver(4)};
+objectTextDivs[5].onmouseover = function(){displayEffectItemOver(5)};
+objectTextDivs[6].onmouseover = function(){displayEffectItemOver(6)};
+objectTextDivs[7].onmouseover = function(){displayEffectItemOver(7)};
+
+function displayNoneEffectDiv(numberODiv) {
+    overDiv[numberODiv].style.display = 'none';
+}
+
+objectTextDivs[0].onmouseleave = function(){displayNoneEffectDiv(0)};
+objectTextDivs[1].onmouseleave = function(){displayNoneEffectDiv(1)};
+objectTextDivs[2].onmouseleave = function(){displayNoneEffectDiv(2)};
+objectTextDivs[3].onmouseleave = function(){displayNoneEffectDiv(3)};
+objectTextDivs[4].onmouseleave = function(){displayNoneEffectDiv(4)};
+objectTextDivs[5].onmouseleave = function(){displayNoneEffectDiv(5)};
+objectTextDivs[6].onmouseleave = function(){displayNoneEffectDiv(6)};
+objectTextDivs[7].onmouseleave = function(){displayNoneEffectDiv(7)};
+
+
+
+//per fare la scelta di trama
 let options = document.getElementsByClassName('option');
 let textStory = document.getElementById('story');
 
@@ -459,51 +503,29 @@ function choiseMaker(event) {
 document.getElementsByClassName("options-container")[0].onclick = (event) => choiseMaker(event);
 
 
-// weaponCont
-// weaponTextDivs
 
-
-
-weaponTextDivs[0].onclick = function() {
-    this.style.background = 'lightcoral';
-    if (weaponTextDivs[1].style.background === 'lightcoral') {
-        weaponTextDivs[1].style.background = 'transparent';
-        let otherWeapon = dataWeapons.findIndex(object => {
-            return object.name === weaponTextDivs[1].textContent            
-        })
-        displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
+function selectWeapon(otherDiv) {
+        event.target.style.background = 'lightcoral';
+        if (weaponTextDivs[otherDiv].style.background === 'lightcoral') {
+            weaponTextDivs[otherDiv].style.background = 'transparent';
+            let otherWeapon = dataWeapons.findIndex(object => {
+                return object.name === weaponTextDivs[otherDiv].textContent            
+            })
+            displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
+        }
+    
+        if (event.target.style.background === 'lightcoral') {
+            let whichWeapon = dataWeapons.findIndex(object => {
+                return object.name === event.target.textContent            
+            }) 
+            displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
+        } else if (event.target.style.background != 'lightcoral') {
+            displayHeroAttack(0);
+        }
     }
-
-    if (this.style.background === 'lightcoral') {
-        let whichWeapon = dataWeapons.findIndex(object => {
-            return object.name === this.textContent            
-        }) 
-        displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
-    } else if (this.style.background != 'lightcoral') {
-        displayHeroAttack(0);
-    }
-}
-
-weaponTextDivs[1].onclick = function() {
-    this.style.background = 'lightcoral';
-    if (weaponTextDivs[0].style.background === 'lightcoral') {
-        weaponTextDivs[0].style.background = 'transparent';
-        let otherWeapon = dataWeapons.findIndex(object => {
-            return object.name === weaponTextDivs[0].textContent            
-        })
-        displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
-    }
-
-    if (this.style.background === 'lightcoral') {
-        let whichWeapon = dataWeapons.findIndex(object => {
-            return object.name === this.textContent            
-        }) 
-        displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
-    } else if (this.style.background != 'lightcoral') {
-        displayHeroAttack(0);
-    }
-}
-
+    
+    weaponTextDivs[0].onclick = function() {selectWeapon(1)};
+    weaponTextDivs[1].onclick = function() {selectWeapon(0)};
         
 
 

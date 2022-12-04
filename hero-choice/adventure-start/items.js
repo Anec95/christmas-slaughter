@@ -24,18 +24,33 @@ export const dataWeapons = [
 
 export const dataItems = [
     {
-        "name": "Revive",
-        "type": "potion",
+        "name": "Eggnog",
+        "type": "healing",
         "effect": 2, //HEALTH
     },
     {
         "name": "Candy apple",
-        "type": "food",
+        "type": "healing",
         "effect": 1, //HEALTH"
     },
+    // {
+    //     "name": "",
+    //     "type": "food",
+    //     "effect": 1, //HEALTH"
+    // },
+    // {
+    //     "name": "",
+    //     "type": "food",
+    //     "effect": 1, //HEALTH"
+    // },
+    // {
+    //     "name": "",
+    //     "type": "food",
+    //     "effect": 1, //HEALTH"
+    // },
     {
-        "name": "Eggnog",
-        "type": "beverage",
+        "name": "Bombardino",
+        "type": "healing",
         "effect": 3, //HEALTH"
     }
 ]
