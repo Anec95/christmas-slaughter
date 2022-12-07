@@ -53,8 +53,8 @@ heroNameConfirmBtn.onclick = function confirmName() {
 }
 
 function startGivingItem() {
-    let numberLengthItems = dataItems.length-1;
-    let object = Math.floor(Math.random() * numberLengthItems);
+    let sliceInitItems = dataItems.length-1;
+    let object = Math.floor(Math.random() * Number(sliceInitItems));
     addItems(dataItems[object])    
 }
 
@@ -62,28 +62,25 @@ startGivingItem();
 startGivingItem();
 
 
-defenseDisplay.innerText = 10 + Math.floor(Math.random() * 10) + 1;
+let defenseHero = 10 + Math.floor(Math.random() * 10) + 1;
 let attackHero = 10 + Math.floor(Math.random() * 10) + 1;
 weaponTextDivs[0].innerText = dataWeapons[1].name //+ ' - attack: +' + dataWeapons[1].attack;
-weaponTextDivs[1].innerText = dataWeapons[2].name //+ ' - attack: +' + dataWeapons[1].attack;
+weaponTextDivs[1].innerText = dataWeapons[0].name //+ ' - attack: +' + dataWeapons[1].attack;
+
+function displayHeroDefense(adds) {
+    if (defenseHero < 0) {
+        defenseHero = 0;
+    }
+    defenseDisplay.innerText = defenseHero + adds;
+}
+
+displayHeroDefense(0);
 
 function displayHeroAttack(adds) {
     attackDisplay.innerText = attackHero + adds;
 }
 
 displayHeroAttack(0);
-
-// function hiddenContainer(container) {
-//     container.style.display = "none";
-// }
-
-// hiddenContainer(containerOne);
-// hiddenContainer(containerTwo);
-// hiddenContainer(containerThree);
-
-// function unveildContainer(uContainer) {
-//     uContainer.style.display = "block";
-// }
 
 function addItems(itemArray) {
     for (let i = 0; i < objectTextDivs.length; i++) {
@@ -93,7 +90,9 @@ function addItems(itemArray) {
         } else if (i === objectTextDivs.length-1 && objectTextDivs[i].textContent != "...") {
             alert("you have no more space");
         }
-
+        if (itemArray.name === 'Engraved talisman') {
+            displayHeroDefense(1)
+        }
     }
 }
 
@@ -112,89 +111,84 @@ function healthDispenser() {
 
 healthDispenser();
 
-// function choice(element, container, uContainer, y, itemArray = "", funcFight ='') {
-//     element.onclick = function () {
-//         hiddenContainer(container);
-//         unveildContainer(uContainer);
-//         //per togliere vita
-//         indexHealth-=y;
-        
-//         if (indexHealth <= 0) {
-//             panelLost.style.display = 'block';
-//         }
-//         healthDispenser();
-//         //per aggiungere item
-//         if (itemArray != "") {
-//             addItems(itemArray);   
-//         }
-//         //FIGHT
-//     }; 
-// }
+function fight(numberMonster) {
+    let attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+    let monsterLife = dataMonster[numberMonster].life;
+    let differenceAtkDfns = attack - dataMonster[numberMonster].defense;
+    if (defenseHero < 0) {
+        defenseHero = 0;
+    }
 
-// function choiceFight(element, container, uContainer, y, itemArray = "") {
-//     element.onclick = function () {
-//         hiddenContainer(container);
-//         unveildContainer(uContainer);
-//         //per togliere vita
-//         indexHealth-=y;
-        
-//         if (indexHealth <= 0) {
-//             panelLost.style.display = 'block';
-//             return;
-//         }
-//         healthDispenser();
-//         //per aggiungere item
-//         if (itemArray != "") {
-//             addItems(itemArray);   
-//         }
-//         //FIGHT
-//         fight();
-//     }; 
-// }
-
-
-// choice(start, intro, containerOne, 1);
-// choice(optionOne, containerOne, containerTwo, 0, dataItems[0]);
-// choiceFight(optionFour, containerTwo, containerThree, 0, dataItems[1]);
-
-
-
-function fight() {
-        let attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-        let monsterLife = dataMonster[0].life;
-        let differenceAtkDfns = attack - dataMonster[0].defense; 
-    
-    while (monsterLife > 0 && indexHealth > 0) {        
-        if (differenceAtkDfns <= -4) {
-            indexHealth -= 4;
+    while (monsterLife > 0 && indexHealth > 0) {    
+        if (differenceAtkDfns <= -8) {
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            if (Number(defenseDisplay.textContent) > 1) {
+                indexHealth -= 4;
+                defenseHero -= 4;
+                alert(`Your leather armor parries four blows, but the damage is too great. You lose four!`);
+            } else {
+                indexHealth -= 6;
+                alert(`The difference between you and your opponent is huge. You cannot escape!`);
+            }        
+            alert(`Life monster is ${monsterLife}, you have done only 1 damage`);
+        } else if (differenceAtkDfns <= -4 && differenceAtkDfns > -8) {        
             monsterLife -= 1;
             attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-            alert(`You feel like shit, lost four`);            
-            alert(`Life monster is ${monsterLife}, you have done only 1 damage`);           
-        } else if (differenceAtkDfns > -4 && differenceAtkDfns <= 0) {
-            indexHealth -= 3;
+            if (Number(defenseDisplay.textContent) > 1) {
+                indexHealth -= 3;
+                defenseHero -= 3;
+                alert(`Your leather armor parries three blows, but the damage is too great. You lose three!`);
+            } else {
+                indexHealth -= 4;
+                alert(`You feel like shit, lost four`);
+            }        
+            alert(`Life monster is ${monsterLife}, you have done only 1 damage`);   
+
+        } else if (differenceAtkDfns > -4 && differenceAtkDfns <= 0) {        
             monsterLife -= 2;
             attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-            alert(`Damn, three lives`);
+            if (Number(defenseDisplay.textContent) > 1) {
+                indexHealth -= 2;
+                defenseHero -= 2;
+                alert(`Your leather armor parries two blows, but the damage is too great. You lose two!`);
+            } else {
+                indexHealth -= 3;
+                alert(`Damn, three lives`);                
+            }
             alert(`Life monster is ${monsterLife}, you have done only 2 damage`);
-        } else if (differenceAtkDfns > 0 && differenceAtkDfns < 4) {
-            indexHealth -= 2;
+
+        } else if (differenceAtkDfns > 0 && differenceAtkDfns < 4) {            
             monsterLife -= 3;
             attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-            alert(`C--, you lose two`)
+            if (Number(defenseDisplay.textContent) > 1) {
+                indexHealth -= 1;
+                defenseHero -= 2;
+                alert(`Your leather armor parries two blows. You lose one!`);
+            } else {
+                indexHealth -= 2;
+                alert(`C--, you lose two`);                
+            }
             alert(`Life monster is ${monsterLife}, you have done 3 damage`);
-        } else if (differenceAtkDfns >= 4 && differenceAtkDfns < 6) {
-            indexHealth -= 1;
+
+        } else if (differenceAtkDfns >= 4 && differenceAtkDfns < 6) {            
             monsterLife -= 4;
             attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-            alert(`Nice hit, you lost only one`);
+            if (Number(defenseDisplay.textContent) > 1) {
+                defenseHero -= 1;
+                alert(`Puah! Only one damage on your leather armor`);
+            } else {
+                indexHealth -= 1;
+                alert(`Nice hit, you lost only one`);
+            }            
             alert(`Life monster is ${monsterLife}, you have done 4 damage`);
-        } else {
+
+        } else if (differenceAtkDfns >= 6) {
             monsterLife -= 6;
             attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
             alert(`You are a master, you inflict 6 damage`);
         }
     };
+    displayHeroDefense(0);
     healthDispenser();
     if (monsterLife <= 0){
         alert('monster dead')
@@ -203,12 +197,6 @@ function fight() {
     }
     console.log(monsterLife)
 }
-
-
-
-
-
-
 
 
 function eventRemover() {
@@ -407,8 +395,12 @@ function displayEffectItemOver(numberODiv) {
             overDiv[numberODiv].innerText = `Using it you will gain 3 life`;
         } else if(event.target.textContent === 'Eggnog') {
             overDiv[numberODiv].innerText = `Using it you will gain 2 life`;
+        } else if(event.target.textContent === 'Engraved talisman') {
+            overDiv[numberODiv].innerText = `Adds 1 to your defense`;
+        }  else {
+        overDiv[numberODiv].style.display = 'none';
         }
-    }  
+    } 
 }
 
 objectTextDivs[0].onmouseover = function(){displayEffectItemOver(0)};
@@ -482,17 +474,82 @@ function choiseMaker(event) {
                 optionOperator(1);
             } else if (optionOne.textContent === dataText[1].option1) {
                 optionOperator(2);
-                statsOperator(1, dataItems[1])
             } else if (optionOne.textContent === dataText[2].option1) {
                 optionOperator(3);
             } else if (optionOne.textContent === dataText[3].option1) {
                 optionOperator(4);
-                fight();
+            } else if (optionOne.textContent === dataText[4].option1) {
+                optionOperator(7);
+            } else if (optionOne.textContent === dataText[5].option1) {
+                optionOperator(9);
+                statsOperator(0, dataItems[3]);
+            } else if (optionOne.textContent === dataText[6].option1) {
+                optionOperator(11);
+            } else if (optionOne.textContent === dataText[7].option1) {
+                optionOperator(13);
+            } else if (optionOne.textContent === dataText[8].option1) {
+                optionOperator(13);
+            } else if (optionOne.textContent === dataText[9].option1) {
+                optionOperator(13);
+            } else if (optionOne.textContent === dataText[10].option1) {
+                optionOperator(13);
+            } else if (optionOne.textContent === dataText[11].option1) {
+                optionOperator(13);
+            }  else if (optionOne.textContent === dataText[12].option1) {
+                optionOperator(13);
+            } else if (optionOne.textContent === dataText[13].option1) {
+                optionOperator(14);
+            } else if (optionOne.textContent === dataText[14].option1) {
+                optionOperator(16);
+            } else if (optionOne.textContent === dataText[15].option1) {
+                optionOperator(18);
+                fight(0);
+            } else if (optionOne.textContent === dataText[16].option1) {
+                optionOperator(20);
+                fight(0);
+            } else if (optionOne.textContent === dataText[17].option1) {
+                optionOperator(21);
+            } else if (optionOne.textContent === dataText[18].option1) {
+                optionOperator(20);
+                fight(0);
+            } else if (optionOne.textContent === dataText[19].option1) {
+                optionOperator(22);
+                fight(0);
+            }  else if (optionOne.textContent === dataText[20].option1) {
+                optionOperator(21);
+            } else if (optionOne.textContent === dataText[21].option1) {
+                optionOperator(23);
+                statsOperator(0, dataItems[0]);
+            } else if (optionOne.textContent === dataText[22].option1) {
+                optionOperator(17);
             }
             break;
-        case options[0]:
+        case options[1]:
+            if (optionTwo.textContent === dataText[3].option2) {
+                optionOperator(5);
+            } else if (optionTwo.textContent === dataText[4].option2) {
+                optionOperator(8);
+                statsOperator(0, dataItems[3]);
+            } else if (optionTwo.textContent === dataText[5].option2) {
+                optionOperator(10);
+            } else if (optionTwo.textContent === dataText[6].option2) {
+                optionOperator(12);
+            } else if (optionTwo.textContent === dataText[13].option2) {
+                optionOperator(15);
+            } else if (optionTwo.textContent === dataText[14].option2) {
+                optionOperator(17);
+            } else if (optionTwo.textContent === dataText[15].option2) {
+                optionOperator(19);
+            } else if (optionTwo.textContent === dataText[21].option2) {
+                optionOperator(24);
+                statsOperator(0, dataItems[0]);
+            }
             break;
-        case options[0]:
+        case options[2]:
+            if (optionThree.textContent === dataText[3].option3) {
+                optionOperator(6);
+                statsOperator(0, dataItems[3]);
+            }
             break;
         default:
             break;

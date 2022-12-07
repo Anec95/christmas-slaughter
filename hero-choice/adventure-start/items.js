@@ -1,8 +1,8 @@
 export const dataWeapons = [
     {
-        "name": "Excalibur",
-        "type": "sword",
-        "attack": 3,
+        "name": "Bollock Candy Dagger",
+        "type": "knife",
+        "attack": 2,
         "durability": "5",
         "weight": "3"
     },
@@ -14,7 +14,7 @@ export const dataWeapons = [
         "weight": "3"
     },
     {
-        "name": "Jambo",
+        "name": "Rapier Candy sword",
         "type": "spear",
         "attack": 5,
         "durability": "7",
@@ -31,28 +31,23 @@ export const dataItems = [
     {
         "name": "Candy apple",
         "type": "healing",
-        "effect": 1, //HEALTH"
+        "effect": 1, //HEALTH
     },
-    // {
-    //     "name": "",
-    //     "type": "food",
-    //     "effect": 1, //HEALTH"
-    // },
-    // {
-    //     "name": "",
-    //     "type": "food",
-    //     "effect": 1, //HEALTH"
-    // },
-    // {
-    //     "name": "",
-    //     "type": "food",
-    //     "effect": 1, //HEALTH"
-    // },
     {
         "name": "Bombardino",
         "type": "healing",
         "effect": 3, //HEALTH"
-    }
+    },
+    {
+        "name": "Engraved talisman",
+        "type": "item",
+        "effect": 1, //DEFENSE
+    },
+    {
+        "name": "Torch",
+        "type": "item",
+        "effect": 1, //ATTACK vs wolves
+    }   
 ]
 
 export const dataHeroNames = ['Arcibaldo',
