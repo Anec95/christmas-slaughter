@@ -4,7 +4,7 @@ body {
     color: rgba(166, 16, 34, 1);
     background-color: rgb(70, 52, 33);
     user-select: none;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header {
@@ -324,3 +324,4 @@ header {
     width: 100%;
     height: 560px;
 }
+
