@@ -2,7 +2,7 @@ export const dataMonster = [
     {
     'name': 'Flame',
     'life': 7,
-    'defense': 16,
+    'defense': 17,
     'attack': 8
     },
     {
