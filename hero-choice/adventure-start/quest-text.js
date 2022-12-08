@@ -247,7 +247,7 @@ export const dataText = [
         "name": "option 26",
         "text": `You attempt escape, but it was only a mere hope. You take a few steps but unlike the beasts the snow is too much of a hindrance to you.
         In front of you two more parry while the one behind you jumps on your back and lands on you.
-        Now ever your position is at a disadvantage and you have no choice but to try to sell your skin dearly.`,
+        By now your position is at a disadvantage and you have no choice but to try to sell your skin dearly.`,
         "option1": `Attempt to overpower the beast!`, //OPTION 29    i 31 
         "option2": ``,
         "option3": ``
@@ -343,8 +343,10 @@ export const dataText = [
     },
     {//41   //OPTION 39
         "name": "option 39",
-        "text": ``,
-        "option1": ``, 
+        "text": `Ouch! You fall on the mound with some pain, but unscathed.
+        You get up, in the shadows at the foot of the mountain, you notice an indentation. In the snow, now that you've grounded yourself, you make out reindeer footprints going in the direction of the cave.
+        Strange, the footprints, break off into nothingness in the center of the crevasse.`,
+        "option1": `Enter`, //OPTION 71    i 73 
         "option2": ``,
         "option3": ``
     },
@@ -413,8 +415,8 @@ export const dataText = [
     {//50   //OPTION 48
         "name": "option 48",
         "text": `Well done! You manage to reach the other end of the clearing taking two more Candy apples with you.
-        Now you can continue on your way.`, //OPTION 49    i 51 
-        "option1": `Enter`, 
+        Now you can continue on your way.`, 
+        "option1": `Enter`, //OPTION 49    i 51 
         "option2": ``,
         "option3": ``
     },
@@ -462,71 +464,75 @@ export const dataText = [
     },
     {//56   //OPTION 54
         "name": "option 54",
-        "text": ``,
-        "option1": ``, 
-        "option2": ``,
+        "text": `You sneak into the room. Lurking behind a rock, you notice in the center of the room three motionless snowmen. While on the left side are 2 dead bodies, at the bottom is a tunnel.`,
+        "option1": `Fight them`, //OPTION 56    i 58 
+        "option2": `Analyze carcasses`, //OPTION 59    i 61 
         "option3": ``
     },
     {//57   //OPTION 55
         "name": "option 55",
-        "text": ``,
-        "option1": ``, 
-        "option2": ``,
+        "text": `Well done! You have managed to find the Hook Mountain and a way into it.
+        You are in a small, damp, icy room, on the right are wooden boxes, while straight ahead a curved tunnel leads inside.`,
+        "option1": `Analyze carcasses`, //OPTION 67    i 69 
+        "option2": `Go straight`, //OPTION 68    i 70 
         "option3": ``
     },
     {//58   //OPTION 56
         "name": "option 56",
-        "text": ``,
-        "option1": ``, 
+        "text": `You immediately jump into the fray by attacking the first one, who falls at the feet of your fury. Now, all that remains is for you to face the last two.`,
+        "option1": `Attack`, //OPTION 60    i 62 
         "option2": ``,
         "option3": ``
     },
     {//59   //OPTION 57
         "name": "option 57",
-        "text": ``,
-        "option1": ``, 
+        "text": `You arrive in front of a small clearing with a snowman at the entrance to a cave. You just have to face this obstacle as well.`,
+        "option1": `Deal with it`, //OPTION 66    i 68 
         "option2": ``,
         "option3": ``
     },
     {//60   //OPTION 58
         "name": "option 58",
-        "text": ``,
-        "option1": ``, 
+        "text": `Continue on the ledge until you come to a clearing. When you get to the corner you notice that a snowman stands guard in front of an opening. All you have to do is fight your way in.`,
+        "option1": `Fight!`, //OPTION 69    i 71 
         "option2": ``,
         "option3": ``
     },
     {//61   //OPTION 59
         "name": "option 59",
-        "text": ``,
-        "option1": ``, 
-        "option2": ``,
+        "text": `You arrive in front of the carcasses smoothly by going around along the bare walls of the cave. The two bodies are in front of you.`,
+        "option1": `Analyze the first corpse`, //OPTION 61    i 63 
+        "option2": `Analyze the second corpse`, //OPTION 62    i 64 
         "option3": ``
     },
     {//62   //OPTION 60
         "name": "option 60",
-        "text": ``,
-        "option1": ``, 
+        "text": `You are exhausted, you faced three more snowmen. There are really a lot of them and everywhere it seems. Now you can focus on the bodies you found.`,
+        "option1": `Analyze corpses`, //OPTION 63    i 65 
         "option2": ``,
         "option3": ``
     },
     {//63   //OPTION 61
         "name": "option 61",
-        "text": ``,
-        "option1": ``, 
+        "text": `You analyze the body, from the signs you understand that they are mercenaries. They show signs of excruciating torture, they must be like you... mercenaries sent from other villages nearby. Only they were captured.
+        In a vest pocket you find a candied hook.`,
+        "option1": `Fight!`, //OPTION 64    i 66 
         "option2": ``,
         "option3": ``
     },
     {//64   //OPTION 62
         "name": "option 62",
-        "text": ``,
-        "option1": ``, 
+        "text": `You analyze the body, from the signs you understand that they are mercenaries. They show signs of excruciating torture, they must be like you... mercenaries sent from other villages nearby. Only they were captured.
+        In a vest pocket you find a talisman. You continue the search when the snowmen behind you come alive.`,
+        "option1": `Fight!`, //OPTION 64    i 66 
         "option2": ``,
         "option3": ``
     },
     {//65   //OPTION 63
         "name": "option 63",
-        "text": ``,
-        "option1": ``, 
+        "text": `You analyze the bodies, from the signs you understand that they are mercenaries. They show signs of excruciating torture, they must be like you... mercenaries sent from other villages nearby. Only they were captured.
+        In a vest pocket of one you find a talisman. In the pants pocket of the second a candied hook.`,
+        "option1": `Take the objects and go into the tunnel`, //OPTION 65    i 67 
         "option2": ``,
         "option3": ``
     },
@@ -546,8 +552,8 @@ export const dataText = [
     },
     {//68   //OPTION 66
         "name": "option 66",
-        "text": ``,
-        "option1": ``, 
+        "text": `Defeat this filthy bastard as well, now you can proceed with the entrance to the cave.`,
+        "option1": `Enter`, //OPTION 55    i 57 
         "option2": ``,
         "option3": ``
     },
@@ -567,13 +573,31 @@ export const dataText = [
     },
     {//71   //OPTION 69
         "name": "option 69",
-        "text": ``,
-        "option1": ``, 
+        "text": `After a bloody fight you also eliminate this bastard, now you can enter.`,
+        "option1": `Enter the cave`, //OPTION 54    i 56 
         "option2": ``,
         "option3": ``
     },
     {//72   //OPTION 70
         "name": "option 70",
+        "text": `Oh no, you were advancing to the right when a piece of the ledge under your feet gave way and sent you plummeting below. In the fall you lost 2 lives and fainted.
+        After a while you manage to wake up, now frozen. You look around and see very little. The sun is setting and the little light it was producing is fading. The rock under the ledge forms an arc by re-entering under the slopes.
+        You move down there to seek shelter, when as the sun goes down you notice a glow coming from further below the niche.
+        You move closer; it certainly appears to be a hidden entrance to the mountain.`,
+        "option1": `Enter`, //OPTION 71    i 73 
+        "option2": ``,
+        "option3": ``
+    },
+    {//73   //OPTION 71
+        "name": "option 71",
+        "text": `Cautiously you enter the cave, hear sounds of restless animals, but perceive no other presences. You turn the corner and notice five boxes containing kicking, demon-like reindeer. One by one you manage to quiet them with the palm of your hand and your steady eyes.
+        At the back of the room is a closed wooden door, the floor strewn with hay. Then, in a dark corner you see a huge red sack, with fur on the edge; too bad, it looks empty.`,
+        "option1": `Go to the door`, //OPTION 72    i 74 
+        "option2": `Look in the bag`, //OPTION 73    i 75  
+        "option3": `Open the box of a reindeer` //OPTION 74    i 76 
+    },
+    {//74   //OPTION 72
+        "name": "option 72",
         "text": ``,
         "option1": ``, 
         "option2": ``,

@@ -522,6 +522,141 @@ function choiseMaker(event) {
                 statsOperator(0, dataItems[0]);
             } else if (optionOne.textContent === dataText[22].option1) {
                 optionOperator(17);
+            } else if (optionOne.textContent === dataText[23].option1) {
+                optionOperator(25);
+            } else if (optionOne.textContent === dataText[24].option1) {
+                optionOperator(43);
+            } else if (optionOne.textContent === dataText[25].option1) {
+                optionOperator(27);
+                fight(3);
+            } else if (optionOne.textContent === dataText[26].option1) {
+                optionOperator(29);
+                fight(4);
+            } else if (optionOne.textContent === dataText[27].option1) {
+                optionOperator(30);
+                fight(3);
+            } else if (optionOne.textContent === dataText[28].option1) {
+                optionOperator(31);
+                fight(4);
+            } else if (optionOne.textContent === dataText[29].option1) {
+                optionOperator(30);
+                fight(3);
+            } else if (optionOne.textContent === dataText[30].option1) {
+                optionOperator(32);
+            } else if (optionOne.textContent === dataText[31].option1) {
+                optionOperator(33);
+                fight(4);
+            } else if (optionOne.textContent === dataText[32].option1) {
+                optionOperator(34);
+            } else if (optionOne.textContent === dataText[33].option1) {
+                optionOperator(36);
+            } else if (optionOne.textContent === dataText[34].option1) {
+                optionOperator(37);
+                statsOperator(0, dataItems[1]);
+            } else if (optionOne.textContent === dataText[35].option1) {
+                optionOperator(40);
+            } else if (optionOne.textContent === dataText[36].option1) {
+                optionOperator(34);
+            } else if (optionOne.textContent === dataText[37].option1) {
+                optionOperator(54);
+            } else if (optionOne.textContent === dataText[38].option1) {
+                optionOperator(41);
+                statsOperator(1);
+            } else if (optionOne.textContent === dataText[39].option1) {
+                optionOperator(42);
+            } else if (optionOne.textContent === dataText[40].option1) {
+                optionOperator(39);
+                statsOperator(0, dataItems[1]);
+            } else if (optionOne.textContent === dataText[41].option1) {
+                optionOperator(73);
+            } else if (optionOne.textContent === dataText[42].option1) {
+                optionOperator(40);
+            } else if (optionOne.textContent === dataText[43].option1) {
+                optionOperator(44);
+            } else if (optionOne.textContent === dataText[44].option1) {
+                optionOperator(46);
+                fight(5);
+            } else if (optionOne.textContent === dataText[45].option1) {
+                optionOperator(47);
+                fight(6);
+            } else if (optionOne.textContent === dataText[46].option1) {
+                optionOperator(48);
+                fight(5);
+            } else if (optionOne.textContent === dataText[47].option1) {
+                optionOperator(49);
+                statsOperator(0, dataItems[1]);
+                statsOperator(0, dataItems[1]);
+                fight(5);
+            } else if (optionOne.textContent === dataText[48].option1) {
+                optionOperator(51);
+                statsOperator(0, dataItems[1]);
+            } else if (optionOne.textContent === dataText[49].option1) {
+                optionOperator(50);
+            } else if (optionOne.textContent === dataText[50].option1) {
+                optionOperator(51);                
+                statsOperator(0, dataItems[1]);
+                statsOperator(0, dataItems[1]);
+            } else if (optionOne.textContent === dataText[51].option1) {
+                optionOperator(52);                
+                fight(5);
+            } else if (optionOne.textContent === dataText[52].option1) {
+                optionOperator(53);
+            } else if (optionOne.textContent === dataText[53].option1) {
+                let sudden = Math.floor(Math.random() * dataHeroNames.length-1) + 1;
+                if (sudden === 0 || sudden === 9) {
+                    optionOperator(72)
+                    statsOperator(2);
+                } else {
+                    optionOperator(57);
+                }                
+            } else if (optionOne.textContent === dataText[54].option1) {
+                optionOperator(59);
+            } else if (optionOne.textContent === dataText[55].option1) {
+                optionOperator(56);
+            } else if (optionOne.textContent === dataText[56].option1) {
+                optionOperator(58);
+                fight(5);
+            } else if (optionOne.textContent === dataText[57].option1) {
+                optionOperator(69);
+            } else if (optionOne.textContent === dataText[58].option1) {
+                optionOperator(62);
+                fight(6);
+            } else if (optionOne.textContent === dataText[59].option1) {
+                optionOperator(68);
+                fight(5);
+            } else if (optionOne.textContent === dataText[60].option1) {
+                optionOperator(71);
+                fight(5);
+            } else if (optionOne.textContent === dataText[61].option1) {
+                optionOperator(63);
+            } else if (optionOne.textContent === dataText[62].option1) {
+                optionOperator(65);
+            } else if (optionOne.textContent === dataText[63].option1) {
+                optionOperator(66);
+                fight(6);
+                statsOperator(0, dataItems[5]);
+            } else if (optionOne.textContent === dataText[64].option1) {
+                optionOperator(66);
+                fight(6);
+                statsOperator(0, dataItems[6]);
+            } else if (optionOne.textContent === dataText[65].option1) {
+                optionOperator(67);
+                statsOperator(0, dataItems[5]);
+                statsOperator(0, dataItems[6]);
+            } else if (optionOne.textContent === dataText[66].option1) {
+                optionOperator();
+            } else if (optionOne.textContent === dataText[67].option1) {
+                optionOperator();
+            } else if (optionOne.textContent === dataText[68].option1) {
+                optionOperator(57);
+            } else if (optionOne.textContent === dataText[69].option1) {
+                optionOperator();
+            } else if (optionOne.textContent === dataText[70].option1) {
+                optionOperator();
+            } else if (optionOne.textContent === dataText[71].option1) {
+                optionOperator(56);
+            }  else if (optionOne.textContent === dataText[72].option1) {
+                optionOperator(73);
             }
             break;
         case options[1]:
@@ -543,12 +678,58 @@ function choiseMaker(event) {
             } else if (optionTwo.textContent === dataText[21].option2) {
                 optionOperator(24);
                 statsOperator(0, dataItems[0]);
+            } else if (optionTwo.textContent === dataText[23].option2) {
+                optionOperator(26);
+            } else if (optionTwo.textContent === dataText[25].option2) {
+                optionOperator(28);
+            } else if (optionTwo.textContent === dataText[32].option2) {
+                optionOperator(35);
+            } else if (optionTwo.textContent === dataText[34].option2) {
+                optionOperator(38);
+                statsOperator(0, dataItems[1]);
+            } else if (optionTwo.textContent === dataText[35].option2) {
+                optionOperator(41);
+                statsOperator(1);
+            } else if (optionTwo.textContent === dataText[36].option2) {
+                optionOperator(35);
+            } else if (optionTwo.textContent === dataText[38].option2) {
+                optionOperator(39);
+            } else if (optionTwo.textContent === dataText[40].option2) {
+                optionOperator(37);
+                statsOperator(0, dataItems[1]);
+            } else if (optionTwo.textContent === dataText[42].option2) {
+                optionOperator(41);
+                statsOperator(1);
+            } else if (optionTwo.textContent === dataText[43].option2) {
+                optionOperator(45);
+                statsOperator(1);
+            } else if (optionTwo.textContent === dataText[52].option2) {
+                optionOperator(56);
+            } else if (optionTwo.textContent === dataText[53].option2) {
+                optionOperator(55);
+            } else if (optionTwo.textContent === dataText[54].option2) {
+                let sudden = Math.floor(Math.random() * dataHeroNames.length-1) + 1;
+                if (sudden === 0 || sudden === 9) {
+                    optionOperator(72)
+                    statsOperator(2);
+                } else {
+                    optionOperator(60);
+                }                
+            } else if (optionTwo.textContent === dataText[56].option2) {
+                optionOperator(61);
+            } else if (optionTwo.textContent === dataText[57].option2) {
+                optionOperator(70);
+            } else if (optionTwo.textContent === dataText[61].option2) {
+                optionOperator(64);
             }
             break;
         case options[2]:
             if (optionThree.textContent === dataText[3].option3) {
                 optionOperator(6);
                 statsOperator(0, dataItems[3]);
+            } else if (optionThree.textContent === dataText[34].option3) {
+                optionOperator(39);
+                statsOperator(0, dataItems[1]);
             }
             break;
         default:
