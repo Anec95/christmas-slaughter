@@ -93,6 +93,9 @@ function addItems(itemArray) {
         if (itemArray.name === 'Engraved talisman') {
             displayHeroDefense(1)
         }
+        if (itemArray.name === 'Candy talisman') {
+            displayHeroAttack(2)
+        }
     }
 }
 
@@ -215,9 +218,11 @@ function closeConfirmBox() {
 }
 
 objectTextDivs[0].onclick = function() {
-    if ((indexHealth <= 6 && this.textContent === "Eggnog")
-        || (indexHealth <= 6 && this.textContent === "Candy apple")
-        || (indexHealth <= 6 && this.textContent === "Bombardino")) {
+    if ((indexHealth <= 6) &&
+    (this.textContent === "Eggnog" ||
+    this.textContent === "Candy apple" ||
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -230,7 +235,8 @@ objectTextDivs[1].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -243,7 +249,8 @@ objectTextDivs[2].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -256,7 +263,8 @@ objectTextDivs[3].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -269,7 +277,8 @@ objectTextDivs[4].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -282,7 +291,8 @@ objectTextDivs[5].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -295,7 +305,8 @@ objectTextDivs[6].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -308,7 +319,8 @@ objectTextDivs[7].onclick = function() {
     if ((indexHealth <= 6) &&
     (this.textContent === "Eggnog" ||
     this.textContent === "Candy apple" ||
-    this.textContent === "Bombardino")) {
+    this.textContent === "Bombardino" ||
+    this.textContent === "Candy hook")) {
         eventRemover()
         sureDiv.style.display = 'block';
         sureDivText.innerText = `Are you sure you want to use ${this.textContent}?`;
@@ -323,6 +335,12 @@ function whichItem(number) {
         indexHealth += 2;        
     } else if (indexHealth === 6 &&
         objectTextDivs[number].textContent === 'Eggnog') {
+        indexHealth += 1;
+    } else if (indexHealth < 6 &&
+        objectTextDivs[number].textContent === 'Candy hook') {
+        indexHealth += 2;        
+    } else if (indexHealth === 6 &&
+        objectTextDivs[number].textContent === 'Candy hook') {
         indexHealth += 1;
     } else if (indexHealth <= 6 &&
         objectTextDivs[number].textContent === 'Candy apple') {
@@ -393,11 +411,14 @@ function displayEffectItemOver(numberODiv) {
             overDiv[numberODiv].innerText = `Using it you will gain 1 life`;
         } else if (event.target.textContent === 'Bombardino') {
             overDiv[numberODiv].innerText = `Using it you will gain 3 life`;
-        } else if(event.target.textContent === 'Eggnog') {
+        } else if(event.target.textContent === 'Eggnog'
+                || event.target.textContent === 'Candy hook') {
             overDiv[numberODiv].innerText = `Using it you will gain 2 life`;
         } else if(event.target.textContent === 'Engraved talisman') {
             overDiv[numberODiv].innerText = `Adds 1 to your defense`;
-        }  else {
+        } else if(event.target.textContent === 'Candy talisman') {
+            overDiv[numberODiv].innerText = `Adds 2 to your attack`;
+        } else {
         overDiv[numberODiv].style.display = 'none';
         }
     } 
