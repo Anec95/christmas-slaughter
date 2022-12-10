@@ -623,7 +623,7 @@ function choiseMaker(event) {
             } else if (optionOne.textContent === dataText[52].option1) {
                 optionOperator(53);
             } else if (optionOne.textContent === dataText[53].option1) {
-                let sudden = Math.floor(Math.random() * dataHeroNames.length-1) + 1;
+                let sudden = Math.floor(Math.random() * 10);
                 if (sudden === 0 || sudden === 9) {
                     optionOperator(72)
                     statsOperator(2);
@@ -729,7 +729,7 @@ function choiseMaker(event) {
             } else if (optionTwo.textContent === dataText[53].option2) {
                 optionOperator(55);
             } else if (optionTwo.textContent === dataText[54].option2) {
-                let sudden = Math.floor(Math.random() * dataHeroNames.length-1) + 1;
+                let sudden = Math.floor(Math.random() * 10);
                 if (sudden === 0 || sudden === 9) {
                     optionOperator(72)
                     statsOperator(2);

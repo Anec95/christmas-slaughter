@@ -451,8 +451,8 @@ export const dataText = [
     {//54   //OPTION 52
         "name": "option 52",
         "text": `You easily jump to the other side. The ridge you landed on is very narrow and you find yourself clinging to the wall.`,
-        "option1": `Left`, //OPTION 57    i 59 
-        "option2": `Right`, //OPTION 58    i 60 
+        "option1": `Go left`, //OPTION 57    i 59 
+        "option2": `Go right`, //OPTION 58    i 60 
         "option3": ``
     },
     {//55   //OPTION 53
