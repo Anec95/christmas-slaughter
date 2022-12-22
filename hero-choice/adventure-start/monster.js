@@ -2,7 +2,7 @@ export const dataMonster = [
     {
     'name': 'Flame',
     'life': 7,
-    'defense': 17,
+    'defense': 15,
     'attack': 8
     },
     {
@@ -20,13 +20,13 @@ export const dataMonster = [
     {
     'name': 'wolf pack',
     'life': 11,
-    'defense': 22,
+    'defense': 20,
     'attack': 14
     },
     {
     'name': 'lurking wolf pack',
     'life': 13,
-    'defense': 24,
+    'defense': 22,
     'attack': 14
     },
     {
@@ -38,9 +38,15 @@ export const dataMonster = [
     {
     'name': 'snowmen pack',
     'life': 12,
+    'defense': 20,
+    'attack': 14
+    },
+    {
+    'name': 'rabid reindeer',
+    'life': 8,
     'defense': 22,
     'attack': 14
-    },  
+    },
     {
     'name': 'Grynch',
     'life': 15,

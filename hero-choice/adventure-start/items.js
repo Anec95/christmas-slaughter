@@ -29,6 +29,11 @@ export const dataItems = [
         "effect": 2, //HEALTH
     },
     {
+        "name": "Candy hook",
+        "type": "food",
+        "effect": 2, //HEALTH
+    },
+    {
         "name": "Candy apple",
         "type": "healing",
         "effect": 1, //HEALTH
@@ -44,20 +49,15 @@ export const dataItems = [
         "effect": 1, //DEFENSE
     },
     {
-        "name": "Torch",
-        "type": "item",
-        "effect": 1, //ATTACK vs wolves
-    },
-    {
-        "name": "Candy hook",
-        "type": "food",
-        "effect": 2, //HEALTH
-    },
-    {
         "name": "Candy talisman",
         "type": "item",
         "effect": 2, //ATTACK
-    }  
+    },
+    {
+        "name": "Pozza smarza",
+        "type": "item",
+        "effect": 2, //ATTACK
+    } 
 ]
 
 export const dataHeroNames = ['Arcibaldo',
