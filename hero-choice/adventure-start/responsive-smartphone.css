@@ -1,0 +1,185 @@
+@media only screen and (max-width: 500px) {
+    body {
+        overflow: scroll;
+    }
+    
+    header {
+        height: 1vh;
+    }
+    
+    .enter-your-name-panel,
+    .lost-panel {
+        width: 80vw;
+        height: 50vh;
+        top: 15vh;
+        left: 10vw;
+    }
+    
+    .title-hero-name,
+    .title-lost {
+        font-size: 25px;
+        letter-spacing: 5px;
+    }
+    
+    .win-panel {
+        top: 10%;
+    }
+    
+    #win-video {
+        width: 100%;
+        margin-top: 70%;
+        transform: translateY(-50%);
+    }
+    
+    #link-finish {
+        margin-top: 0px;
+    }
+    
+    .player-sheet {
+        margin-left: 5px;
+        margin-top: 10px;
+    
+        width: 40vw;
+        height: 95vh;
+    }
+    
+    .stats {
+        height: 30vh;
+        margin-bottom: 5px;
+    }
+    
+    .info {
+        height: max-content;
+        margin-bottom: 5px;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: start;
+    }
+    
+    .hero-name {
+        padding: 2px;
+        margin-left: 0px;
+        font-size: 16px;
+    }
+    
+    .health{
+        width: 140px;
+        height: 18px;
+        margin: 2px;
+    }
+
+    .backpack {
+        height: 70vh;
+    }
+    
+    #items-yes-no {
+        height: 70px;
+    }
+    
+    #remove-yes,
+    #remove-no {
+        width: 40px;
+        height: 22px;
+    }
+    
+    .grid-backpack {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .object-title {
+        margin: 4px;
+    }
+    
+    .object {
+        width: 90%;
+        margin: 4px;
+    }
+    
+    .over-div-effect {
+        right: -10px;
+        bottom: 15px;
+        display: none;
+    }
+    
+    .object-name,
+    .weapon-name {
+        flex: 1;
+        margin: 0 2px;
+        font-size: 14px;
+    }    
+    
+    .fighting {
+        flex-direction: column;
+        height: 25vh;
+    }
+    
+    .fight-class {
+        display: flex;
+    
+        height: max-content;
+    }
+
+    .weapon-title {
+        margin: 0 4px;
+    }
+    
+    .weapon {
+        flex-direction: column;
+        align-items: space-around;
+        justify-content: center;
+        flex: 2;
+        margin: 2px;
+    }
+    
+    .weapon-1 {
+        margin-bottom: 2px;
+    }
+    
+    .stats-fight {
+        flex-direction: row;
+        margin: 0px;
+    }
+    
+    .options-container {
+        top: 2vh;
+        left: 42vw;
+        margin: 2px;
+    
+        width: 60vw;
+        height: max-content;
+    }
+    
+    .option,
+    .answer-div,
+    .story-telling {
+        font-size: 14px;
+        width: 85%;
+        padding: 5px;
+        margin: 2px;
+        margin-bottom: 6px;
+    }
+    
+    .option,
+    .answer-div {
+        padding: 5px;
+    }
+    
+    #enigma-answer {
+        width: 100px;
+    }
+    
+    .mountains {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        position: absolute;
+        bottom: -70px;
+    }
+    
+    .mountain-2 {
+        background-size: cover;
+    }  
+}
