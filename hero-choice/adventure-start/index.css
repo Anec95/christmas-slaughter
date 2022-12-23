@@ -68,6 +68,42 @@ header {
     filter: brightness(1.75);
 }
 
+.win-panel {
+    width: 90%;
+    height: 80%;
+    z-index: 10000;
+    background-color: rgb(255, 254, 239);
+    border: 3px solid rgba(166, 16, 34, 1);
+    border-radius: 8px;
+    text-align: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+#win-video {
+    width: 70%;
+}
+
+#link-finish {
+    margin-top: 10px;
+    display: block;
+    color: rgba(166, 16, 34, 1);
+}
+
+#finish-btn {
+    background-color: rgb(255, 254, 239);
+    border: 3px solid rgba(166, 16, 34, 1);
+    border-radius: 6px;
+    padding: 4px;
+}
+
+#finish-btn:hover {
+    cursor: pointer;
+}
+
 .player-sheet {
     display: flex;
     flex-direction: column;
@@ -276,6 +312,7 @@ header {
 }
 
 .option,
+.answer-div,
 .story-telling {
     width: 40vw;
     height: max-content;
@@ -288,7 +325,8 @@ header {
     margin-bottom: 10px;
 }
 
-.option {
+.option,
+.answer-div {
     padding: 8px;
 }
 
@@ -301,6 +339,17 @@ header {
     margin-bottom: 40px;
 }
 
+.answer-div {
+    text-align: center;
+    display: none;
+}
+
+#enigma-answer {
+    border: 2px solid rgba(166, 16, 34, 1);
+    border-radius: 4px;
+    width: 300px;
+    height: 20px;
+}
 
 .mountains {
     display: flex;

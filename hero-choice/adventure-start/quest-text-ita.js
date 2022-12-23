@@ -141,7 +141,7 @@ export const dataTextIta = [
         "name": "opzione15",
         "text": `Ti appresti al camino quando una fiammella si anima e si dirige verso di te.`,
         "option1": `Usa la coperta del tuo giaciglio`, //OPTION 18
-        "option2": `2.	Prendi il pitale nell'angolo della stanza, sembra abbondi`, //OPTION 19
+        "option2": `Prendi il pitale nell'angolo della stanza, sembra abbondi`, //OPTION 19
         "option3": ``
     },
     { //16
@@ -468,7 +468,8 @@ export const dataTextIta = [
     },
     { //56
         "name": "",
-        "text": `Entri di soppiatto nella stanza. Appostato dietro una roccia, noti al centro della stanza tre pupazzi di neve immobili. Mentre sul lato sinistro ci sono 2 carcasse, sul fondo una galleria.`,
+        "text": `Entri di soppiatto nella stanza. Appostato dietro una roccia, noti al centro della stanza tre pupazzi di neve immobili. Sul fondo una galleria.
+        Tutto in giro, nella caverna sono ammucchiate centinaia e centinaia di decorazioni natalizie. Ormai tutte in condizioni tristissime. Si capisce esattamente cosa ne vogliono fare! Scruti tra quelle decorazioni per vedere se puoi trovare qualcosa di utile o almeno di intatto che possa tirarti su di morale, quando… sul lato sinistro noti 2 cadaveri.`,
         "option1": `Combatti quei bastardi`, //OPTION 58
         "option2": `Analizza le carcasse`, //OPTION 61
         "option3": ``
@@ -527,7 +528,7 @@ export const dataTextIta = [
     { //64
         "name": "",
         "text": `Analizzi il corpo, dai segni capisci che si tratta di mercenari. Presentano i segni di torture atroci, devono essere come te… mercenari inviati da altri villaggi nelle vicinanze. Solo che loro sono stati catturati.
-        In una tasca del giubbotto trovi un talismano. Continui la perquisizione quando gli snowmen alle tue spalle si animano.`,
+        In una tasca del giubbotto trovi un talismano. Continui la perquisizione quando i pupazzi di neve alle tue spalle si animano.`,
         "option1": `Combatti quegli assassini`, //OPTION 66
         "option2": ``,
         "option3": ``
@@ -542,17 +543,20 @@ export const dataTextIta = [
     },
     { //66
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Vicino ai due cadaveri c'era un bellissimo scudo natalizio a forma di ghirlanda, questo ti ha facilitato il combattimento, anche se questi cosi sono veramente tosti; è come se avessi spalato i vialetti di tutte le case del villaggio.
+        Questo scudo è veramente magnifico, decidi di mettertelo in spalla e di proseguire.`,
+        "option1": `Metti lo scudo sulle spalle e prosegui`, //OPTION 67
         "option2": ``,
         "option3": ``
     },
     { //67
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
-        "option3": ``
+        "text": `Dopo aver camminato tra tunnel e scalinate senza via d'uscita che non fosse tornare indietro, arrivi ad una stanza.
+        Le superfici delle pareti sono di marmo, fredde e lisce come la caverna. Esattamente nel centro, sotto ad una colonna di luce, trovi un orsacchiotto pupazzo - 'Sarà fatto di vera pelliccia? Quella sintetica ancora non l'hanno ancora inventata?!
+        Cosa vorrà dire, in tutto questo contesto, un singolo orsacchiotto giocattolo? I suoi occhi sono neri come la pece, ma il suo pelo sembra così morbido e liscio, che ti verrebbe voglia di prenderlo e portarlo a tuo figlio una volta che tutto questo sarà finito.`,
+        "option1": `Prendilo per tuo figlio`, //OPTION 99
+        "option2": `Prendilo a calci`, //OPTION 100
+        "option3": `Vai all'uscita all'altro capo della stanza di marmo` //OPTION 101
     },
     { //68
         "name": "",
@@ -563,7 +567,7 @@ export const dataTextIta = [
     },
     { //69
         "name": "",
-        "text": `La cassa è piena di paglia, imballata per bene. Frugando, trovi un talismano candito dall’aspetto appetitoso.
+        "text": `La cassa è piena di paglia, imballata per bene. Frugando, trovi un talismano candito dall'aspetto appetitoso.
         Lo metti al collo e prosegui nella galleria.`,
         "option1": `Avventurati nella galleria`, //OPTION 70
         "option2": ``,
@@ -571,7 +575,7 @@ export const dataTextIta = [
     },
     { //70
         "name": "",
-        "text": `Ti addentri nella galleria illuminata da qualche torcia appesa al muro. Viaggi all’interno della penombra tutto acquattato per un buon quarto d’ora, quando il corridoio arriva alla sua fine, con due pilastri illuminati e una rampa di scale, scavata nella roccia, che tende verso l’alto.
+        "text": `Ti addentri nella galleria illuminata da qualche torcia appesa al muro. Viaggi all'interno della penombra tutto acquattato per un buon quarto d'ora, quando il corridoio arriva alla sua fine, con due pilastri illuminati e una rampa di scale, scavata nella roccia, che tende verso l'alto.
         Dal portale non proviene alcun rumore.`,
         "option1": `Sali in silenzio la scalinata`, //OPTION 91
         "option2": ``,
@@ -760,156 +764,486 @@ export const dataTextIta = [
     },
     { //92
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Afferri un omino per una gamba e lo sollevi. Non avevi mai visto in vita tua dei bottoni gommosi così perfetti e invitanti. Alzi lo sguardo e vedi il suo sorriso benevolo che pian piano si tramuta in un ghigno malefico.
+        Sta prendendo vita, e non sembra affatto contento di trovarsi tra le tue mani. Lo lasci cadere, non appena tocca terra si frantuma. Sono parecchio fragili sti cosi, non devono aver fatto un gran lavoro. Mentre ti si forma un'idea di dove potrebbero averli prodotti, sui tavoli gli altri omini di panpepato si stanno alzando con lo stesso ghigno.
+        Vogliono la tua pelle, e tu sei esattamente nel mezzo.`,
+        "option1": `Preparati ad affrontare ste merdine`, //OPTION 94
+        "option2": `Parkour`, //OPTION 95
         "option3": ``
     },
     { //93
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Ti dirigi dalla parte opposta della sala quando senti un ghigno malefico alle tue spalle.
+        Sfoderi immediatamente la spada e ti giri preparandoti al peggio. Vedi un omino di panpepato che si è alzato sul tavolo, ti avvicini e con un rovescio lo spezzi in due.
+        “Oh oh oh, figlio di odalisca!” quel cosino sembrava proprio appetitoso, ma chissà quale maleficio conteneva.
+        Ed ecco che questi pensieri si fanno sempre più veritieri, intorno a te anche gli altri iniziano a levarsi in piedi.
+        Sei accerchiato!`,
+        "option1": `Preparati ad affrontare ste merdine`, //OPTION 94
+        "option2": `Parkour`, //OPTION 95
         "option3": ``
     },
     { //94
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Sono troppi, ma per fortuna sono fragilissimi e quasi si spezzano da soli, anche se i loro denti e artigli riescono a lacerarti. Devi stare attento.
+        Ne hai spezzati ormai una decina, è quasi divertente; se non fosse appunto per i graffi.`,
+        "option1": `Continua lo spargimento di glutine`, //OPTION 96
+        "option2": `Si è aperto un varco, sfruttalo per scappare`, //OPTION 97
         "option3": ``
     },
     { //95
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Sei campione di salto all'ovino e si vede. Salti sopra a un tavolo evitando gli omini, ne salti un secondo e poi un terzo. Ne manca solo uno, e nell'inseguimento gli omini si sono sbriciolati da soli.
+        Appoggio sulla parete col piede sinistro e balzo sul tavolo, ti giri per vedere cosa accade alle tue spalle. Quegli esseri, da quando si sono animati hanno tirato fuori fauci e artigli letali, ma per fortuna sono fragilissimi e inseguendoti da un tavolo all'altro si sono sbriciolati.
+        Quando… senti un dolore pungente alla caviglia. Un maledetto ti si è aggrappato addosso con gli artigli.
+        Con una sberla lo sbatti contro il muro e lo frantumi. Cazzo se ti brucia.
+        Scendi dal tavolo e con calma ti dirigi all'uscita.`,
+        "option1": `Con una lacrimuccia esci dalla stanza`, //OPTION 98
+        "option2": `Trattieni la lacrimuccia ed esci da vero uomo pompato`, //OPTION 98
         "option3": ``
     },
     { //96
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Il glutine ti ha appesantito il cervello, vedi farina in ogni direzione. Questi diavoli sono uno spasso, doloroso, ma infinito.
+        Continui a tirare fendenti a destra e a manca, e ora hai iniziato pure a prenderli a calcioni da quanto sono deboli e indifesi.
+        Finito di menarli, ti senti quasi il mugnaio del tuo villaggio.
+        Si è formata una nube fittissima e ti ritrovi farina persino nelle brache.
+        Saltellando qua e là schiacciando gli ultimi superstiti, ti dirigi alla via d'uscita.`,
+        "option1": `Esci senza spolverare`, //OPTION 98
         "option2": ``,
         "option3": ``
     },
     { //97
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Da piccolo hai partecipato con notevoli risultati al salto dell'ovino. Nel tuo bagaglio ti porti appresso un'ottima skill trasversale.
+        Salti da un tavolo all'altro schiacciando questi esseri spregevoli e molli - 'Se solo ci fosse una tazza di tè caldo dove pucciarli'. Sali sull'ultimo tavolo prima dell'uscita e ti volti per vedere la scena.
+        Quegli esseri, da quando si sono animati hanno tirato fuori fauci e artigli letali, ma per fortuna sono fragilissimi e inseguendoti da un tavolo all'altro si sono sbriciolati.
+        Quando… senti un dolore pungente alla caviglia. Un maledetto ti si è aggrappato addosso con gli artigli.
+        Con una sberla lo sbatti contro il muro e lo frantumi. Cazzo se ti brucia.
+        Scendi dal tavolo e con calma ti dirigi all'uscita.`,
+        "option1": `Con una lacrimuccia esci dalla stanza`, //OPTION 98
+        "option2": `Trattieni la lacrimuccia ed esci da vero uomo pompato`, //OPTION 98
         "option3": ``
     },
     { //98
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Attraversi un lungo corridoio e qualche scalinata; dopo poco arrivi ad uno spiazzo. Ci sono altri tre tunnel, ma sai già che quello di fianco non può essere. Sai che per arrivare in fondo devi salire, mentre quello scende come quello da cui provieni.
+        Ti trovi a un bivio, quale sarà la giusta via?`,
+        "option1": `Tunnel di sinistra!!!`, //OPTION 103
+        "option2": `No! Tunnel di destra`, //OPTION 104
         "option3": ``
     },
     { //99
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Ti togli di spalla lo zaino per avvicinarti e ficcarcelo dentro. O meglio, questa è la tua intenzione. Appena fai i primi passi questo inizia a crescere e crescere sempre di più. Gli occhi si iniettano di sangue e il suo sorriso fatto da un filo si trasforma in delle fauci sanguinolente. Dalle zampette pucciose escono ora degli artigli paurosi. Non è il momento di pensieri teneri.
+        Lasci cadere lo zaino e ti prepari all'ennesimo scontro.`,
+        "option1": `Inevitabile, combatti`, //OPTION 102
         "option2": ``,
         "option3": ``
     },
     { //100
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Prendi una bella rincorsa e SBAM. Lanci il piccolo orsacchiotto pupazzo contro il muro. Nonostante tu avessi messo tutta la tua frustrazione e la rabbia accumulata in questa avventura in quel calcio, la forza con cui l'orsetto è volato via, non è molta; come se fosse fatto d'aria all'interno.
+        Ti sfoghi per circa un quarto d'ora, quando poi, raggiunta la pace interiore, decidi che è il momento di andare avanti.`,
+        "option1": `Lasci il pupazzo a terra e esci dalla stanza`, //OPTION 98
         "option2": ``,
         "option3": ``
     },
     { //101
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Abbastanza frettolosamente vuoi oltrepassare la stanza, non sembrano esserci trappole di qualsiasi tipo. Quando, non appena fai i primi passi questo inizia a crescere e crescere sempre di più. Gli occhi si iniettano di sangue e il suo sorriso fatto da un filo si trasforma in delle fauci sanguinolente. Dalle zampette pucciose escono ora degli artigli paurosi. Non è il momento di pensieri teneri.`,
+        "option1": `Inevitabile, combatti`, //OPTION 102
         "option2": ``,
         "option3": ``
     },
     { //102
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Quel mostro ti ha messo con le spalle al muro per quasi tutto il combattimento. Sconfiggerlo è stata dura, e dire che per una volta sembrava andare tutto per il verso giusto. Ma alla fine sei riuscito a sventrarlo con la tua spada candita.
+        Ti medichi le ferite, mai state così tante in un'avventura. Anzi, forse non ne hai subite così tante nemmeno in tutta la tua vita.
+        Ma attenzione, il sangue che sta sgorgando dal mostro, pian piano comincia a tornare indietro e quella che è la carcassa di un grande orso sta di nuovo rimpicciolendosi. Per paura che possa accadere qualcos'altro, ti fiondi verso l'uscita.`,
+        "option1": `Scappa prima che l'orso torni di nuovo`,
         "option2": ``,
         "option3": ``
     },
     { //103
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Quando eri entrato nella caverna, avevi avvertito un leggero puzzo. Lo avevi attribuito all'umidità che si può trovare in posti come questi, ma più vai avanti e più si intensifica. Diventa quasi nauseabondo, come di immondezzaio, di rancido e di bitume.
+        Nonostante questo continui ad avanzare. Con una manica cerchi di coprirti il naso, anche se naturalmente non ha molto effetto nel proteggerti dal puzzo.
+        Arrivi ad una stanza ottagonale, il freddo d'un tratto è aumentato. Le pareti e il pavimento sono ricoperti di uno strato di brina, devi fare attenzione a non scivolare.
+        Nel mezzo, invece, impiantato nel pavimento, c'è un enorme lapislazzuli, da cui partono numerose crepe. Nella stanza aleggia una nebbiolina gelata. Brr, vorresti proprio tornare indietro.
+        Ma in fondo, vedi un'uscita.`,
+        "option1": `Avanza nella stanza`, //OPTION \105
         "option2": ``,
         "option3": ``
     },
     { //104
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Sei ormai provato da tutte le sfide che hai passato a pieni voti, e non. Speri solo di non incontrare altri ostacoli sul tuo cammino. Ti addentri nella galleria di destra e avanzi per circa mezz'ora quando finalmente percepisci dell'aria gelida, ma meno rarefatta, provenire da davanti. Finalmente ti stai avvicinando ad uno spiazzo arieggiato.
+        Arrivi all'uscita. Finalmente fuori! Dai uno sguardo all'esterno e vedi grossi cumuli di neve, devi trovarti quasi in cima alla montagna, e come non detto vedi la cima ad uncino proprio sopra di te.
+        Per arrivarci devi oltrepassare uno stretto passo, ma attenzione… ai suoi lati si prospetta una caduta poco piacevole.
+        Per fortuna non sai cosa vogliano dire le vertigini.
+        Dall'altra parte, proprio sotto la cima, vedi un enorme portone con davanti una figura incappucciata, decisamente troppo poco vestita per il clima attuale.
+        La persona che sta dall'altra parte sembra verti notato, ma nonostante tutto, non pare esserti ostile. Sta immobile, appoggiato al suo bastone, come ad attenderti.`,
+        "option1": `Attraversa il passo e dirigiti verso il portone`, //OPTION 117
         "option2": ``,
         "option3": ``
     },
     { //105
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Metti un piede nella stanza e la gemma inizia a lampeggiare.
+        Puff! E subito lì vicino si materializza un pupazzo di neve. Allora è da lì che provengono quei maledetti mostri infernali! Non c'è altro da fare!
+        Bisogna assolutamente affrontarli il più velocemente possibile per evitare che se ne materializzino troppi. Così facendo potrai distruggere il cristallo ed eliminare definitivamente questi bastardi!`,
+        "option1": `Affronta il pupazzo di neve appena comparso`, //OPTION 106
         "option2": ``,
         "option3": ``
     },
     { //106
         "name": "",
-        "text": ``,
-        "option1": ``,
-        "option2": ``,
+        "text": `Questi maledetti riescono sempre a renderti il percorso difficile, ma oramai ci hai preso la mano. Ti sei avvicinato al cristallo abbattendo questo demonio quando ne spuntano fuori altri due. Ma ormai ci sei quasi, sei solo a un passo dal cristallo.`,
+        "option1": `Abbatti prima il cristallo`, //OPTION 107
+        "option2": `Affronta prima i due pupazzi di neve!`, //OPTION 108
         "option3": ``
     },
     { //107
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Tutta la tua forza risiede nella spada che ti porti appresso. La impugni a due mani e sferri un colpo micidiale al lapislazzuli. Dopodiché, però, cadi nelle grinfie di quei demoni che ti feriscono. Ma almeno, ora, sono soli contro la tua furia. Nessun altro pupazzo del cazzo ti si parerà davanti nella tua cerca.`,
+        "option1": `Liberati dalle loro grinfie`, //OPTION 109
         "option2": ``,
         "option3": ``
     },
     { //108
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `A scudisciate e spintoni rovesci quei demoni. Ma non fai in tempo a buttare giù il secondo che altri quattro fuoriescono dal lapislazzuli. Non c'è tempo da perdere, devi assolutamente distruggere il cristallo!`,
+        "option1": `Abbatti il cristallo`, //OPTION 110
         "option2": ``,
         "option3": ``
     },
     { //109
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Con rapida brutalità liberi il braccio destro, che impugna la spada, e tiri un fendente ai ramoscelli induriti che formano le braccia del pupazzo di neve. Con una capriola ti allontani dalle loro grinfie e ti ergi immediatamente in piedi.
+        Sei pronto ad affrontarli.`,
+        "option1": `Sconfiggi gli ultimi superstiti`, //OPTION 111
         "option2": ``,
         "option3": ``
     },
     { //110
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Tutta la tua forza risiede nella spada che ti porti appresso. La impugni a due mani e sferri un colpo micidiale al lapislazzuli. Dopodiché, però, cadi nelle grinfie dei due bastardi più vicini. Ma almeno, ora, sono soli contro la tua furia. Nessun altro pupazzo del cazzo ti si parerà davanti nella tua cerca.`,
+        "option1": `Liberati dalle grinfie di quei demoni`, //OPTION 112
         "option2": ``,
         "option3": ``
     },
     { //111
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Abbattuti anche questi, torni ad un momento di lucidità e guardandoti intorno noti che non tutti i pupazzi lasciano Candy apple; in ogni caso riesci a recuperarne due.`,
+        "option1": `Lascia la stanza e avanza`, //OPTION 115
         "option2": ``,
         "option3": ``
     },
     { //112
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Con rapida brutalità liberi il braccio destro, che impugna la spada, e tiri un fendente ai ramoscelli induriti che formano le braccia del pupazzo di neve. Con una capriola ti allontani dalle loro grinfie e ti ergi immediatamente in piedi.
+        In totale rimango quattro pupazzi. Sei pronto ad affrontarli a gruppi di due.`,
+        "option1": `Affronta il primo gruppo`, //OPTION 113
         "option2": ``,
         "option3": ``
     },
-    { //
+    { //113
         "name": "",
-        "text": ``,
-        "option1": ``,
+        "text": `Con difficoltà sconfiggi i primi due pupazzi, mannaggia, ora ne avanzano due. Sei esausto, ma questo ti serva di lezione per i combattimenti futuri.`,
+        "option1": `Affronta il secondo gruppo`, //OPTION 114
         "option2": ``,
         "option3": ``
-    }
+    },
+    { //114
+        "name": "",
+        "text": `Le energie iniziano ad essere poche, e il freddo della stanza rallenta i tuoi movimenti. Ma non puoi mollare proprio adesso.
+        Abbattuti anche questi, torni ad un momento di lucidità e guardandoti intorno noti che non tutti i pupazzi lasciano Candy apple; in ogni caso riesci a recuperarne tre.`,
+        "option1": `Mangia una Candy apple e avanza`, //OPTION 115
+        "option2": `Raccogli tutte e tre le mele e avanza`, //OPTION 115
+        "option3": ``
+    },
+    { //115
+        "name": "",
+        "text": `Sono ore ormai che ti addentri nella penombra di queste grotte. E questo tunnel sembra interminabile, ma dopo un tempo a te indefinito, intravedi una luce molto forte provenire dal fondo.`,
+        "option1": `Vai verso la luce`, //OPTION 116
+        "option2": ``,
+        "option3": ``
+    },
+    { //116
+        "name": "",
+        "text": `Entri nella stanza e davanti a te, dietro a un'inferriata spessa, vedi un vecchio in calzoni rossi tutti stracciati. Il vecchio è moribondo e malconcio. Nell'aria si respira un forte odore di umidità. Le sue ossa saranno a pezzi.
+        Chissà quel povero vecchietto da quanto è prigioniero in questo postaccio!
+        Ti avvicini alle sbarre e provi ad aprire il cancello della sua prigione con tutte le tue forze, ma niente da fare! Serve la chiave.
+        Poi, il vecchio con un rantolo: “Oh… oh… oh…” In credibile, è proprio Babbo Natale, in quelle condizioni non eri riuscito proprio a riconoscerlo.
+        Infili un braccio tra le sbarre e provi a fargli riprendere conoscenza, è messo proprio male. Gli allunghi un pezzo di pagnotta e gli lasci la tua borraccia d'acqua.
+        Con fatica beve un sorso e mangia un pezzo di pane. Ora ci si che si ragiona.
+        “Chi sei tu? Anche te sei qua per fermare questo folle? Già due sono passati. Sono stati torturati, ma non ho più loro notizie. Sono giorni che non tornano nella loro prigione.”
+        Gli dici chi sei e da dove vieni, e che di certo tu non farai la loro fine. Tu sei lì per salvare Lon e non fallirai!`,
+        "option1": `Chiedi a Babbo cosa ti aspetta e se ha informazioni utili da darti`, //OPTION 125
+        "option2": ``,
+        "option3": ``
+    },
+    { //117
+        "name": "",
+        "text": `Nell'attraversata rischi la caduta una sola volta, dove la neve ti aveva ingannato e fatto scivolare; ma per il resto sembrava più ardua di quello che era.
+        Arrivi al portone e la mano dell'incappucciato subito si leva a fermarti.
+        “Alt! Di qua non puoi passare, se prima non risolvi il mio indovinello!”
+        “Dunque sta a te decidere! Vuoi tu passare il portone o preferisci tornare indietro? Il mio padrone non vuole perdere tempo con chiunque arrivi alla sua montagna, e forse lo avrai già dedotto da tutti gli ostacoli che esso ha seminato fin giù nella foresta! Ma tu sembri esserne degno, nessuno era ancora giunto fin qua!
+        Vedrai con che calore ti accoglierà il mio padrone una volta che sarai passato!”`,
+        "option1": `Finalmente una prova di intelletto e non fisica`, //OPTION 118
+        "option2": `Bah, l'intelletto non fa per me`, //OPTION 119
+        "option3": ``
+    },
+    { //118
+        "name": "",
+        "text": `“Bene bene, dunque scegli l'indovinello!”
+        “Ne ho giusto uno che tengo in serbo da molto tempo, aspettando che qualcuno mi raggiungesse!”
+        “Sai dirmi, come mai i bambini cinesi non credono in Babbo Natale?”`,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //119
+        "name": "",
+        "text": `“Capisco, in pochi sceglierebbero gli indovinelli, sai, possono essere molto complicati. Se veramente vuoi incontrare chi sta orchestrando tutto questo da vari mesi, non ti rimane che tornare sui tuoi passi e scegliere l'altra via”`,
+        "option1": `Fottitene di questo stronzo che non ti vuole lasciar passare e uccidilo`, //OPTION 122
+        "option2": `Torna sui tuoi passi`, //OPTION 123
+        "option3": ``
+    },
+    { //120
+        "name": "",
+        "text": `“Com'è possibile!? Sei riuscito ad indovinare, forse il mio indovinello non era poi così difficile. Ma una promessa è una promessa, e te hai risolto l'arcano, quindi puoi passare!”
+        Detto questo il portone, da solo, inizia ad aprirsi fino a lasciare uno spiraglio. Ora ti puoi intrufolare al suo interno.`,
+        "option1": `Lascia l'incappucciato ed entra`, //OPTION 124
+        "option2": ``,
+        "option3": ``
+    },
+    { //121
+        "name": "",
+        "text": `“Mi spiace… eheh… ma la risposta non è corretta. Lo so, lo so. Era parecchio difficile il mio indovinello… eheh…
+        Ora, se veramente sei intenzionato a passare oltre non ti rimane che trovare un'altra via!”`,
+        "option1": `Fottitene di questo stronzo che ti piglia pure per il culo e uccidilo`, //OPTION 122
+        "option2": `Torna sui tuoi passi e prendi l'altra via`, //OPTION 123
+        "option3": ``
+    },
+    { //122
+        "name": "",
+        "text": `Hai appena ucciso l'unica persona che era in grado di farti entrare, ma che allo stesso tempo non era intenzionata a farlo. Sulla porta non ci sono serrature e sull'incappucciato non ci sono chiavi. Capisci che probabilmente la porta si apriva con un suo comando. Non ti rimane che tornare indietro.`,
+        "option1": `Torna al bivio precedente e prendi l'altra strada`, //OPTION 123
+        "option2": ``,
+        "option3": ``
+    },
+    { //123
+        "name": "",
+        "text": `Non ne puoi più, sono ore che gironzoli come un idiota e ancora non vedi via d'uscita, anche se c'eri quasi.
+        Arrivi al bivio di prima e prendi l'altra strada.`,
+        "option1": `Sti cazzi prendi la strada di sinistra`, //OPTION 103
+        "option2": ``,
+        "option3": ``
+    },
+    { //124
+        "name": "",
+        "text": `Il soffitto si alza notevolmente rispetto alle stanze a cui eri abituato. Ora ti trovi in un corridoio molto largo e profondo. Lo spazio è poco luminoso ma ai tuoi fianchi si alzano numerose colonne fino in fondo al corridoio.
+        Sul fondo una porta è socchiusa, e da quello spiraglio si staglia una fortissima luce.`,
+        "option1": `Vai verso la luce`, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //125
+        "name": "",
+        "text": `“Mi piace il tuo atteggiamento figliolo! Vedi, qualche mese fa il Grinch arrivò su queste montagne, devi sapere che ha un'ossessione per le montagne con la guglia ad uncino. Ammattisce se tale tipologia di guglia è naturale, ma se non ne trova di tali ce la scolpisce lui stesso!”
+        “Lui in questo momento si trova di sicuro nella sua sala reale. Dietro quella porta” fa, indicando una porta in fondo alla fila di celle “c'è un corridoio che vi ci conduce direttamente.”
+        “Fa attenzione, è pieno di servitori ed è pieno di risorse”
+        A questo proposito gli dici che te ne sei occupato tu stesso dei suoi servitori; e che effettivamente non è stata affatto una passeggiata.
+        “Bene, bene figliolo. Sei proprio il valoroso di cui avevamo bisogno. Allora posso darti un ulteriore aiuto, ma per questo devi darmi un attimo di tempo e ti chiedo di girarti. Ma ti prometto che ne varrà la pena”.`,
+        "option1": `Girati`, //OPTION 126
+        "option2": ``,
+        "option3": ``
+    },
+    { //126
+        "name": "",
+        "text": `“Vedi, tenevo questa pozione da parte, in un posto in cui non la potesse trovare. Speravo io stesso di riuscire a fermarlo; ma per me è troppo forte, e ormai sono troppo debole. 
+        Ma tu no, sei giovane e forte. Sicuramente riuscirai nell'impresa! Ecco, tieni e fanne buon uso!”
+        “Mi raccomando, bevila tutta, fino all'ultima goccia! Questa ti darà vigore, e così forse riuscirai a sconfiggere il Grinch e a salvare il Natale! Su su, ora vai… non c'è tempo da perdere!`,
+        "option1": `Prendi la pozione e dirigiti verso la tana del Grinch`, //OPTION 127
+        "option2": ``,
+        "option3": ``
+    },
+    { //127
+        "name": "",
+        "text": `Avanzi tra le celle, molte sono vuote… altre contengono dei corpi in putrefazione mentre altre ancora dei roditori che ne mangiano i rimasugli…
+        Ti trovi proprio in un posto lugubre. Speri solo di uscirne o vivo o morto, la tortura non fa per te. Troppe unghie spezzate e tirature di collo.
+        Arrivi alla porta indicata dal vecchio. Accosti l'orecchio…
+        Senti un portone sbattere e una voce urlare… “Arcibaldoo! Vammi a prendere gli abiti dal sarto! Quel ciccione di là ha delle taglie troppo grandi perfino per me! Ho speso una fortuna per farli restringere, e ormai manca poco al fatidico giorno!” risata malefica “ma tutto andrà secondo i miei piani, lo so”
+        Altra risata ridicolmente malefica.
+        Questo è il tuo momento, ora puoi entrare in azione e fargli andare di traverso quella risata ridicola!`,
+        "option1": `Entrata ad effetto nella stanza con un calcione alla porta`, //OPTION 128
+        "option2": ``,
+        "option3": ``
+    },
+    { //128
+        "name": "",
+        "text": `Con un possente calcio spalanchi la porta. Davanti a te un lungo corridoio tetro con un largo tappeto rosso e un Grinch dalla risata interrotta!
+        “Diavolo che non sei altro! Che diamine ci fai nella mia casa?! Come hai fatto a passare le mie guardie?!
+        Non brilleranno in intelligenza, ma sono assai perfide con chi non è autorizzato ad entrare. E nessuno, dico nessuno è autorizzato ad entrare nei miei domini!”
+        “Preparati alla mia ira avventuriero!”`,
+        "option1": `Sei pronto alla sua ira`, //OPTION 129
+        "option2": ``,
+        "option3": ``
+    },
+    { //129
+        "name": "",
+        "text": `Esseri come il Grinch sono spesso gradassi e arroganti. Sai benissimo che per quanto forti siano, la loro vera forza risiede nei tranelli e nei suoi sottoposti, cose già viste ed affrontate.
+        Sfoderi la spada. Lui sfodera i suoi artigli affilati e vi caricate.`,
+        "option1": `Come andrà a finire?`, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //130
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //131
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //132
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //133
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //134
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //135
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``, 
+        "option3": ``
+    },
+    { //136
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //137
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //138
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //139
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //140
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //141
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //142
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //143
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //144
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //145
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //146
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //147
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //148
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //149
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
+    { //150
+        "name": "",
+        "text": ``,
+        "option1": ``, //OPTION
+        "option2": ``,
+        "option3": ``
+    },
 ]

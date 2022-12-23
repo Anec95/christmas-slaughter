@@ -93,6 +93,9 @@ function addItems(itemArray) {
         if (itemArray.name === 'Candy talisman') {
             displayHeroAttack(2)
         }
+        if (itemArray.name === 'Shield garland') {
+            displayHeroAttack(3)
+        }
     }
 }
 
@@ -190,9 +193,15 @@ function fight(numberMonster) {
     };
     displayHeroDefense(0);
     healthDispenser();
-    if (monsterLife <= 0 && indexHealth <= 0) {
+    if (monsterLife <= 0 && indexHealth <= 0 && numberMonster === 10) {
+        alert(`You managed to defeat the Grinch and free the region from his clutches. This effort unfortunately cost you your life.
+        But you emerge victorious!`)
+        document.getElementsByClassName('win-panel')[0].style.display = 'block';
+    } else if (monsterLife <= 0 && indexHealth <= 0) {
         document.getElementsByClassName('title-lost')[0].innerText = 'You have killed the monster. But you are also dead!'
         panelLost.style.display = 'block';
+    } else if (monsterLife <= 0 && numberMonster === 10){
+        document.getElementsByClassName('win-panel')[0].style.display = 'block';
     } else if (monsterLife <= 0){
         alert('monster dead')
     } else {
@@ -356,10 +365,6 @@ function statsOperator(dmg, itemArray) {
     }
 }
 
-// 
-
-
-
 function selectWeapon(event, otherDiv) {
         event.target.style.background = 'lightcoral';
         if (weaponTextDivs[otherDiv].style.background === 'lightcoral') {
@@ -380,9 +385,30 @@ function selectWeapon(event, otherDiv) {
         }
     }
     
-    weaponTextDivs[0].onclick = function(event) {selectWeapon(event, 1)};
-    weaponTextDivs[1].onclick = function(event) {selectWeapon(event, 0)};
-        
+weaponTextDivs[0].onclick = function(event) {selectWeapon(event, 1)};
+weaponTextDivs[1].onclick = function(event) {selectWeapon(event, 0)};
+
+
+let submitEnigma = document.getElementsByClassName('answer-div')[0];
+let answerArea = document.getElementById('enigma-answer');
+let answerBtn = document.getElementById('confirm-enigma');
+
+answerBtn.onclick = function confirmAnswer() {
+    let answerText = answerArea.value;
+    if (answerText.includes('costruiscono') || answerText.includes('giocattoli') ||
+        answerText.includes('Costruiscono') || answerText.includes('fanno') ||
+        answerText.includes('Fanno')
+    ) {
+        optionOperator(120)
+        submitEnigma.style.display = 'none';
+    } else if (answerText === '') {
+        alert('Hai trovato una risposta?')
+    } else {
+        optionOperator(121)
+        submitEnigma.style.display = 'none';
+    };    
+}
+
 
 function choiseMakerIta(event) {    
     switch (event.target) {
@@ -565,14 +591,15 @@ function choiseMakerIta(event) {
                 statsOperator(0, dataItems[5]);
                 statsOperator(0, dataItems[1]);
             } else if (optionOne.textContent === dataTextIta[66].option1) {
-                optionOperator();
+                optionOperator(67);
+                statsOperator(0, dataItems[9]);
             } else if (optionOne.textContent === dataTextIta[67].option1) {
-                optionOperator();
+                optionOperator(99);
             } else if (optionOne.textContent === dataTextIta[68].option1) {
                 optionOperator(57);
             } else if (optionOne.textContent === dataTextIta[69].option1) {
                 optionOperator(70);
-                statsOperator(0, dataItems[1]);
+                statsOperator(0, dataItems[5]);
             } else if (optionOne.textContent === dataTextIta[70].option1) {
                 optionOperator(91);
             } else if (optionOne.textContent === dataTextIta[71].option1) {
@@ -627,6 +654,116 @@ function choiseMakerIta(event) {
                 optionOperator(69);
             } else if (optionOne.textContent === dataTextIta[91].option1) {
                 optionOperator(92);
+            } else if (optionOne.textContent === dataTextIta[92].option1) {
+                optionOperator(94);
+                fight(8)
+            } else if (optionOne.textContent === dataTextIta[93].option1) {
+                optionOperator(94);
+                fight(8)
+            } else if (optionOne.textContent === dataTextIta[94].option1) {
+                optionOperator(96);
+                fight(8)
+            } else if (optionOne.textContent === dataTextIta[95].option1) {
+                optionOperator(98);
+                if (defenseHero > 0) {
+                    displayHeroDefense(2)
+                } else {
+                    statsOperator(1);
+                }  
+            } else if (optionOne.textContent === dataTextIta[96].option1) {
+                optionOperator(98);
+            } else if (optionOne.textContent === dataTextIta[97].option1) {
+                optionOperator(98);
+                if (defenseHero > 0) {
+                    displayHeroDefense(2)
+                } else {
+                    statsOperator(1);
+                }  
+            } else if (optionOne.textContent === dataTextIta[98].option1) {
+                optionOperator(103);
+            } else if (optionOne.textContent === dataTextIta[99].option1) {
+                optionOperator(102);
+                fight(9)
+            } else if (optionOne.textContent === dataTextIta[100].option1) {
+                optionOperator(98);
+            } else if (optionOne.textContent === dataTextIta[101].option1) {
+                optionOperator(102);
+                fight(9)
+            } else if (optionOne.textContent === dataTextIta[102].option1) {
+                optionOperator(98);
+            } else if (optionOne.textContent === dataTextIta[103].option1) {
+                optionOperator(105);
+            } else if (optionOne.textContent === dataTextIta[104].option1) {
+                optionOperator(117);
+            } else if (optionOne.textContent === dataTextIta[105].option1) {
+                optionOperator(106);
+                fight(5)
+            } else if (optionOne.textContent === dataTextIta[106].option1) {
+                optionOperator(107);
+                if (defenseHero > 0) {
+                    displayHeroDefense(2)
+                } else {
+                    statsOperator(1);
+                }  
+            } else if (optionOne.textContent === dataTextIta[107].option1) {
+                optionOperator(109);
+            } else if (optionOne.textContent === dataTextIta[108].option1) {
+                optionOperator(110);
+                if (defenseHero > 0) {
+                    displayHeroDefense(2)
+                } else {
+                    statsOperator(1);
+                }  
+            } else if (optionOne.textContent === dataTextIta[109].option1) {
+                optionOperator(111);
+                fight(6)
+            } else if (optionOne.textContent === dataTextIta[110].option1) {
+                optionOperator(112);
+            } else if (optionOne.textContent === dataTextIta[111].option1) {
+                optionOperator(115);
+                statsOperator(0, dataItems[2]);
+                statsOperator(0, dataItems[2]);
+            } else if (optionOne.textContent === dataTextIta[112].option1) {
+                optionOperator(113);
+                fight(6)
+            } else if (optionOne.textContent === dataTextIta[113].option1) {
+                optionOperator(114);
+                fight(6)
+            } else if (optionOne.textContent === dataTextIta[114].option1) {
+                optionOperator(115);
+                statsOperator(0, dataItems[2]);
+                statsOperator(0, dataItems[2]);
+                statsOperator(-1);
+            } else if (optionOne.textContent === dataTextIta[115].option1) {
+                optionOperator(116);
+            } else if (optionOne.textContent === dataTextIta[116].option1) {
+                optionOperator(125);
+            } else if (optionOne.textContent === dataTextIta[117].option1) {
+                optionOperator(118);
+                submitEnigma.style.display = 'block';
+            } else if (optionOne.textContent === dataTextIta[119].option1) {
+                optionOperator(122);
+            } else if (optionOne.textContent === dataTextIta[120].option1) {
+                optionOperator(124);
+            } else if (optionOne.textContent === dataTextIta[121].option1) {
+                optionOperator(122);
+            } else if (optionOne.textContent === dataTextIta[122].option1) {
+                optionOperator(123);
+            } else if (optionOne.textContent === dataTextIta[123].option1) {
+                optionOperator(103);
+            } else if (optionOne.textContent === dataTextIta[124].option1) {
+                optionOperator(116);
+            } else if (optionOne.textContent === dataTextIta[125].option1) {
+                optionOperator(126);
+            } else if (optionOne.textContent === dataTextIta[126].option1) {
+                optionOperator(127);
+                statsOperator(0, dataItems[6]);
+            } else if (optionOne.textContent === dataTextIta[127].option1) {
+                optionOperator(128);
+            } else if (optionOne.textContent === dataTextIta[128].option1) {
+                optionOperator(129);
+            }  else if (optionOne.textContent === dataTextIta[129].option1) {
+                fight(10);
             }
             break;
         case options[1]:
@@ -645,7 +782,6 @@ function choiseMakerIta(event) {
                 optionOperator(17);
             } else if (optionTwo.textContent === dataTextIta[15].option2) {
                 optionOperator(19);
-                fight(0);
             } else if (optionTwo.textContent === dataTextIta[21].option2) {
                 optionOperator(24);
                 statsOperator(0, dataItems[0]);
@@ -692,6 +828,8 @@ function choiseMakerIta(event) {
                 optionOperator(70);
             } else if (optionTwo.textContent === dataTextIta[61].option2) {
                 optionOperator(64);
+            }  else if (optionTwo.textContent === dataTextIta[67].option2) {
+                optionOperator(100);
             } else if (optionTwo.textContent === dataTextIta[73].option2) {
                 optionOperator(75);
             } else if (optionTwo.textContent === dataTextIta[74].option2) {
@@ -724,6 +862,42 @@ function choiseMakerIta(event) {
                 optionOperator(70);
             } else if (optionTwo.textContent === dataTextIta[91].option2) {
                 optionOperator(93);
+            } else if (optionTwo.textContent === dataTextIta[92].option2) {
+                optionOperator(95);
+            } else if (optionTwo.textContent === dataTextIta[93].option2) {
+                optionOperator(95);
+            } else if (optionTwo.textContent === dataTextIta[94].option2) {
+                optionOperator(97);
+            } else if (optionTwo.textContent === dataTextIta[95].option2) {
+                optionOperator(98);
+                if (defenseHero > 0) {
+                    displayHeroDefense(2)
+                } else {
+                    statsOperator(1);
+                } 
+            } else if (optionTwo.textContent === dataTextIta[97].option2) {
+                optionOperator(98);
+                if (defenseHero > 0) {
+                    displayHeroDefense(2)
+                } else {
+                    statsOperator(1);
+                } 
+            } else if (optionTwo.textContent === dataTextIta[98].option2) {
+                optionOperator(104);
+            } else if (optionTwo.textContent === dataTextIta[106].option2) {
+                optionOperator(108);
+                fight(6)
+            } else if (optionTwo.textContent === dataTextIta[114].option2) {
+                optionOperator(115);
+                statsOperator(0, dataItems[2]);
+                statsOperator(0, dataItems[2]);
+                statsOperator(0, dataItems[2]);
+            } else if (optionTwo.textContent === dataTextIta[117].option2) {
+                optionOperator(119);
+            } else if (optionTwo.textContent === dataTextIta[119].option2) {
+                optionOperator(123);
+            } else if (optionTwo.textContent === dataTextIta[121].option2) {
+                optionOperator(123);
             }
             break;
         case options[2]:
@@ -733,6 +907,8 @@ function choiseMakerIta(event) {
             } else if (optionThree.textContent === dataTextIta[34].option3) {
                 optionOperator(39);
                 statsOperator(0, dataTextIta[2]);
+            }  else if (optionThree.textContent === dataTextIta[67].option3) {
+                optionOperator(101);
             } else if (optionThree.textContent === dataTextIta[73].option3) {
                 optionOperator(76);
                 statsOperator(1);

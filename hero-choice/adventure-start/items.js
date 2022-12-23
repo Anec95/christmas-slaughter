@@ -23,41 +23,61 @@ export const dataWeapons = [
 ];
 
 export const dataItems = [
-    {
+    { //0
         "name": "Eggnog",
         "type": "healing",
         "effect": 2, //HEALTH
     },
-    {
+    { //1
         "name": "Candy hook",
         "type": "food",
         "effect": 2, //HEALTH
     },
-    {
+    { //2
         "name": "Candy apple",
         "type": "healing",
         "effect": 1, //HEALTH
     },
-    {
+    { //3
         "name": "Bombardino",
         "type": "healing",
         "effect": 3, //HEALTH"
     },
-    {
+    { //4
         "name": "Engraved talisman",
         "type": "item",
         "effect": 1, //DEFENSE
     },
-    {
+    { //5
         "name": "Candy talisman",
         "type": "item",
         "effect": 2, //ATTACK
     },
-    {
-        "name": "Pozza smarza",
+    { //6
+        "name": "Lion potion",
         "type": "item",
-        "effect": 2, //ATTACK
-    } 
+        "effect": 5, //ATTACK
+    },
+    { //6
+        "name": "Festering potion",
+        "type": "item",
+        "effect": -2, //ATTACK
+    },
+    { //7
+        "name": "Gall potion",
+        "type": "item",
+        "effect": -2, //ARMOR
+    },
+    { //8
+        "name": "Festering potion",
+        "type": "item",
+        "effect": -1, //LIFE
+    },
+    { //9
+        "name": "Shield garland",
+        "type": "item",
+        "effect": 3, //DEFENSE
+    }
 ]
 
 export const dataHeroNames = ['Arcibaldo',

@@ -10,8 +10,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <!-- <meta name="viewport" content="width=device-width, initial-scale= 1.0"> -->
 
-            <script type="module" src="./index.js" defer></script>
-            <script type="module" src="./index2.js" defer></script>       
+            <script type="module" src="./index.js" defer></script>  
         </head>
 
         <body>
@@ -29,6 +28,13 @@
                 <a href="../">
                     <img class="skull-img" src="../../assets/images/skull.png" alt=""> 
                 </a>               
+            </div>
+
+            <div class="win-panel">
+                <video id="win-video" controls>
+                    <source src="../../assets/clip/win-panel.mp4" type="video/mp4">
+                </video>
+                <a href="../../" id="link-finish"><input type="button" id="finish-btn" value="Homepage"></a>        
             </div>
 
             <div class="player-sheet">
@@ -134,6 +140,10 @@
                     <div id="option-1" class="option one">Knock on the door!</div>
                     <div id="option-2" class="option two"></div>
                     <div id="option-3" class="option three"></div>
+                    <div class="answer-div">
+                        <input type="text" id="enigma-answer" placeholder="Dai la tua risposta">
+                        <input type="button" id="confirm-enigma" value="Confirm">
+                    </div>                    
                 </div>
 
                 <!-- <div id="introduction">
