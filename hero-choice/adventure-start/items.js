@@ -58,22 +58,22 @@ export const dataItems = [
         "type": "item",
         "effect": 5, //ATTACK
     },
-    { //6
+    { //7
         "name": "Festering potion",
         "type": "item",
         "effect": -2, //ATTACK
     },
-    { //7
+    { //8
         "name": "Gall potion",
         "type": "item",
         "effect": -2, //ARMOR
     },
-    { //8
-        "name": "Festering potion",
+    { //9
+        "name": "Mistery potion",
         "type": "item",
         "effect": -1, //LIFE
     },
-    { //9
+    { //10
         "name": "Shield garland",
         "type": "item",
         "effect": 3, //DEFENSE
