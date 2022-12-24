@@ -36,6 +36,7 @@ let nameHeroChoicePanel = document.getElementsByClassName('enter-your-name-panel
 let textBoxHeroName = document.getElementById('text-area-box');
 let heroNameConfirmBtn = document.getElementById('corfim-button');
 let panelLost = document.getElementsByClassName('lost-panel')[0];
+let powerUp = document.getElementsByClassName('powerUp');
 
 
 heroNameConfirmBtn.onclick = function confirmName() {
@@ -60,7 +61,7 @@ startGivingItem();
 
 
 let defenseHero = 10 + Math.floor(Math.random() * 10) + 1;
-let attackHero = 10 + Math.floor(Math.random() * 10) + 1;
+let attackHero = 33 + Math.floor(Math.random() * 10) + 1;
 weaponTextDivs[0].innerText = dataWeapons[1].name //+ ' - attack: +' + dataWeapons[1].attack;
 weaponTextDivs[1].innerText = dataWeapons[0].name //+ ' - attack: +' + dataWeapons[1].attack;
 
@@ -80,21 +81,32 @@ function displayHeroAttack(adds) {
 displayHeroAttack(0);
 
 function addItems(itemArray) {
+    if (itemArray.name === 'Candy talisman') {
+        powerUp[0].style.backgroundColor = 'green';
+        attackHero += 2;
+        return displayHeroAttack(0);
+    }
+    if (itemArray.name === 'Engraved talisman') {
+        powerUp[1].style.backgroundColor = 'green';
+        defenseHero += 2;
+        return displayHeroDefense(0);
+    }
+    if (itemArray.name === 'Shield garland') {
+        powerUp[2].style.backgroundColor = 'green';
+        defenseHero += 3;
+        return displayHeroDefense(0);
+    }
+    if (itemArray.name === 'Rapier Candy sword') {
+        powerUp[3].style.backgroundColor = 'green';
+        attackHero += 3;
+        return displayHeroAttack(0);        
+    }
     for (let i = 0; i < objectTextDivs.length; i++) {
         if (objectTextDivs[i].textContent === "...") {
             objectTextDivs[i].innerText = itemArray.name;
             break;
         } else if (i === objectTextDivs.length-1 && objectTextDivs[i].textContent != "...") {
             alert("you have no more space");
-        }
-        if (itemArray.name === 'Engraved talisman') {
-            displayHeroDefense(1)
-        }
-        if (itemArray.name === 'Candy talisman') {
-            displayHeroAttack(2)
-        }
-        if (itemArray.name === 'Shield garland') {
-            displayHeroAttack(3)
         }
     }
 }
@@ -115,7 +127,7 @@ function healthDispenser() {
 healthDispenser();
 
 function fight(numberMonster) {
-    let attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+    let attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
     let monsterLife = dataMonster[numberMonster].life;
     let differenceAtkDfns = attack - dataMonster[numberMonster].defense;
     if (defenseHero < 0) {
@@ -124,70 +136,60 @@ function fight(numberMonster) {
 
     while (monsterLife > 0 && indexHealth > 0) {    
         if (differenceAtkDfns <= -8) {
-            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-            if (Number(defenseDisplay.textContent) > 1) {
-                indexHealth -= 4;
-                defenseHero -= 4;
-                alert(`Your leather armor parries four blows, but the damage is too great. You lose four!`);
-            } else {
-                indexHealth -= 6;
-                alert(`The difference between you and your opponent is huge. You cannot escape!`);
-            }        
-            alert(`Life monster is ${monsterLife}, you have done only 1 damage`);
-        } else if (differenceAtkDfns <= -4 && differenceAtkDfns > -8) {        
-            monsterLife -= 1;
-            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
             if (Number(defenseDisplay.textContent) > 1) {
                 indexHealth -= 3;
-                defenseHero -= 3;
-                alert(`Your leather armor parries three blows, but the damage is too great. You lose three!`);
+                defenseHero -= 4;
+                alert(`Your leather armor parries four blows, but the damage is too great. You lose three!`);
             } else {
-                indexHealth -= 4;
-                alert(`You feel like shit, lost four`);
+                indexHealth -= 5;
+                alert(`The difference between you and your opponent is huge. You cannot escape!`);
+            }        
+        } else if (differenceAtkDfns <= -4 && differenceAtkDfns > -8) {        
+            monsterLife -= 1;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
+            if (Number(defenseDisplay.textContent) > 1) {
+                defenseHero -= 3;
+                alert(`Your leather armor parries three blows!`);
+            } else {
+                indexHealth -= 3;
+                alert(`You feel like shit, lost three`);
             }        
             alert(`Life monster is ${monsterLife}, you have done only 1 damage`);   
 
         } else if (differenceAtkDfns > -4 && differenceAtkDfns <= 0) {        
             monsterLife -= 2;
-            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
             if (Number(defenseDisplay.textContent) > 1) {
-                indexHealth -= 2;
                 defenseHero -= 2;
-                alert(`Your leather armor parries two blows, but the damage is too great. You lose two!`);
+                alert(`Your leather armor parries two blows!`);
             } else {
-                indexHealth -= 3;
+                indexHealth -= 2;
                 alert(`Damn, three lives`);                
             }
             alert(`Life monster is ${monsterLife}, you have done only 2 damage`);
 
         } else if (differenceAtkDfns > 0 && differenceAtkDfns < 4) {            
             monsterLife -= 3;
-            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
             if (Number(defenseDisplay.textContent) > 1) {
-                indexHealth -= 1;
-                defenseHero -= 2;
-                alert(`Your leather armor parries two blows. You lose one!`);
+                defenseHero -= 1;
+                alert(`Your leather armor parries one blows!`);
             } else {
-                indexHealth -= 2;
-                alert(`C--, you lose two`);                
+                indexHealth -= 1;
+                alert(`C--, you lose one`);                
             }
             alert(`Life monster is ${monsterLife}, you have done 3 damage`);
 
         } else if (differenceAtkDfns >= 4 && differenceAtkDfns < 6) {            
             monsterLife -= 4;
-            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
-            if (Number(defenseDisplay.textContent) > 1) {
-                defenseHero -= 1;
-                alert(`Puah! Only one damage on your leather armor`);
-            } else {
-                indexHealth -= 1;
-                alert(`Nice hit, you lost only one`);
-            }            
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
+            alert(`Nice hit, you didn't lose life`);    
             alert(`Life monster is ${monsterLife}, you have done 4 damage`);
 
         } else if (differenceAtkDfns >= 6) {
             monsterLife -= 6;
-            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 5) + 1;
+            attack = Number(attackDisplay.textContent) + Math.floor(Math.random() * 10) + 1;
             alert(`You are a master, you inflict 6 damage`);
         }
     };
@@ -365,28 +367,28 @@ function statsOperator(dmg, itemArray) {
     }
 }
 
-function selectWeapon(event, otherDiv) {
-        event.target.style.background = 'lightcoral';
-        if (weaponTextDivs[otherDiv].style.background === 'lightcoral') {
-            weaponTextDivs[otherDiv].style.background = 'transparent';
-            let otherWeapon = dataWeapons.findIndex(object => {
-                return object.name === weaponTextDivs[otherDiv].textContent            
-            })
-            displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
-        }
+// function selectWeapon(event, otherDiv) {
+//         event.target.style.background = 'lightcoral';
+//         if (weaponTextDivs[otherDiv].style.background === 'lightcoral') {
+//             weaponTextDivs[otherDiv].style.background = 'transparent';
+//             let otherWeapon = dataWeapons.findIndex(object => {
+//                 return object.name === weaponTextDivs[otherDiv].textContent            
+//             })
+//             displayHeroAttack(-Number(dataWeapons[otherWeapon].attack));
+//         }
     
-        if (event.target.style.background === 'lightcoral') {
-            let whichWeapon = dataWeapons.findIndex(object => {
-                return object.name === event.target.textContent            
-            }) 
-            displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
-        } else if (event.target.style.background != 'lightcoral') {
-            displayHeroAttack(0);
-        }
-    }
+//         if (event.target.style.background === 'lightcoral') {
+//             let whichWeapon = dataWeapons.findIndex(object => {
+//                 return object.name === event.target.textContent            
+//             }) 
+//             displayHeroAttack(Number(dataWeapons[whichWeapon].attack));
+//         } else if (event.target.style.background != 'lightcoral') {
+//             displayHeroAttack(0);
+//         }
+//     }
     
-weaponTextDivs[0].onclick = function(event) {selectWeapon(event, 1)};
-weaponTextDivs[1].onclick = function(event) {selectWeapon(event, 0)};
+// weaponTextDivs[0].onclick = function(event) {selectWeapon(event, 1)};
+// weaponTextDivs[1].onclick = function(event) {selectWeapon(event, 0)};
 
 
 let submitEnigma = document.getElementsByClassName('answer-div')[0];
@@ -425,7 +427,7 @@ function choiseMakerIta(event) {
                 optionOperator(7);
             } else if (optionOne.textContent === dataTextIta[5].option1) {
                 optionOperator(9);
-                statsOperator(0, dataItems[4]);
+                addItems(dataItems[4])
             } else if (optionOne.textContent === dataTextIta[6].option1) {
                 optionOperator(11);
             } else if (optionOne.textContent === dataTextIta[7].option1) {
@@ -585,21 +587,21 @@ function choiseMakerIta(event) {
                 optionOperator(66);
                 displayHeroAttack(2)
                 fight(6);
-                statsOperator(0, dataItems[5]);                
+                addItems(dataItems[5])               
             } else if (optionOne.textContent === dataTextIta[65].option1) {
                 optionOperator(67);
-                statsOperator(0, dataItems[5]);
+                addItems(dataItems[5])   
                 statsOperator(0, dataItems[1]);
             } else if (optionOne.textContent === dataTextIta[66].option1) {
                 optionOperator(67);
-                statsOperator(0, dataItems[9]);
+                addItems(dataItems[9])   
             } else if (optionOne.textContent === dataTextIta[67].option1) {
                 optionOperator(99);
             } else if (optionOne.textContent === dataTextIta[68].option1) {
                 optionOperator(57);
             } else if (optionOne.textContent === dataTextIta[69].option1) {
                 optionOperator(70);
-                statsOperator(0, dataItems[5]);
+                addItems(dataItems[5])   
             } else if (optionOne.textContent === dataTextIta[70].option1) {
                 optionOperator(91);
             } else if (optionOne.textContent === dataTextIta[71].option1) {
@@ -622,7 +624,7 @@ function choiseMakerIta(event) {
                 optionOperator(85);
             } else if (optionOne.textContent === dataTextIta[79].option1) {
                 optionOperator(80);
-                weaponTextDivs[1].innerText = dataWeapons[2].name;
+                addItems(dataWeapons[2])
                 if (defenseHero > 0) {
                     displayHeroDefense(2)
                 } else {
@@ -649,7 +651,7 @@ function choiseMakerIta(event) {
                 optionOperator(74);
             } else if (optionOne.textContent === dataTextIta[89].option1) {
                 optionOperator(74);
-                weaponTextDivs[1].innerText = dataWeapons[2].name;
+                addItems(dataWeapons[2])
             } else if (optionOne.textContent === dataTextIta[90].option1) {
                 optionOperator(69);
             } else if (optionOne.textContent === dataTextIta[91].option1) {
@@ -771,7 +773,7 @@ function choiseMakerIta(event) {
                 optionOperator(5);
             } else if (optionTwo.textContent === dataTextIta[4].option2) {
                 optionOperator(8);
-                statsOperator(0, dataItems[4]);
+                addItems(dataItems[4])
             } else if (optionTwo.textContent === dataTextIta[5].option2) {
                 optionOperator(10);
             } else if (optionTwo.textContent === dataTextIta[6].option2) {
@@ -845,7 +847,7 @@ function choiseMakerIta(event) {
                 optionOperator(86);
             } else if (optionTwo.textContent === dataTextIta[79].option2) {
                 optionOperator(74);
-                weaponTextDivs[1].innerText = dataWeapons[2].name;
+                addItems(dataWeapons[2])
             } else if (optionTwo.textContent === dataTextIta[80].option2) {
                 optionOperator(82);
             } else if (optionTwo.textContent === dataTextIta[81].option2) {
@@ -903,7 +905,7 @@ function choiseMakerIta(event) {
         case options[2]:
             if (optionThree.textContent === dataTextIta[3].option3) {
                 optionOperator(6);
-                statsOperator(0, dataItems[4]);
+                addItems(dataItems[4])
             } else if (optionThree.textContent === dataTextIta[34].option3) {
                 optionOperator(39);
                 statsOperator(0, dataTextIta[2]);
