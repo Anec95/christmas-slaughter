@@ -137,6 +137,24 @@
     .weapon-1 {
         margin-bottom: 2px;
     }
+
+    .power-up-div {
+        margin-top: 10px;
+    }
+    
+    .info-powerup {
+        bottom: 25px;
+        right: -60px;
+        border-radius: 6px;
+    }
+
+    .info-shield-garland {
+        right: -30px;
+    }
+
+    .info-candy-rapier {
+        right: -10px;
+    }
     
     .stats-fight {
         flex-direction: row;

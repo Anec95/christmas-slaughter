@@ -134,6 +134,29 @@
         margin-bottom: 10px;
         margin-top: 10px;
     }
+
+    .power-up-div {
+        margin-top: 40px;
+    }
+
+    .powerUp {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .info-powerup {
+        bottom: 35px;
+        right: -20px;
+        border-radius: 6px;
+    }
+
+    .info-shield-garland {
+        right: -30px;
+    }
+
+    .info-candy-rapier {
+        right: -50px;
+    }
     
     .stats-fight {
         flex-direction: row;
