@@ -61,7 +61,7 @@ startGivingItem();
 
 
 let defenseHero = 10 + Math.floor(Math.random() * 10) + 1;
-let attackHero = 33 + Math.floor(Math.random() * 10) + 1;
+let attackHero = 13 + Math.floor(Math.random() * 10) + 1;
 weaponTextDivs[0].innerText = dataWeapons[1].name //+ ' - attack: +' + dataWeapons[1].attack;
 weaponTextDivs[1].innerText = dataWeapons[0].name //+ ' - attack: +' + dataWeapons[1].attack;
 
