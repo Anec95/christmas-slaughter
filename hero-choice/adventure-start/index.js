@@ -174,7 +174,7 @@ function fight(numberMonster) {
                 alert(`Your leather armor parries two blows!`);
             } else {
                 indexHealth -= 2;
-                alert(`Damn, three lives`);                
+                alert(`Damn, two lives`);                
             }
             alert(`Life monster is ${monsterLife}, you have done only 2 damage`);
             console.log( `attack ${attack} defense ${defenseHero}`)
