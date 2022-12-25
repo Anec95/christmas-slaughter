@@ -1,0 +1,147 @@
+@media only screen and (max-width: 500px) {
+    body {
+        overflow: hidden;
+    }
+    
+                    /* HEADER */
+    
+    header {
+        left: 67%;
+    
+        width: 300px;
+        padding-top: 120px;
+        letter-spacing: 2px;
+    }
+    
+    h1 {
+        font-size: 5vw;
+    }
+    
+    h3 {
+        font-size: 4vw;
+    }    
+    
+                    /* COLUMN */
+    
+    .column {
+        position: relative;
+    
+        width: 100px;
+        height: 94vh;
+        background-color: rgb(255, 254, 239);
+    }
+    
+    .c-left {
+        left: 30px;
+    }
+    
+    .c-right {
+        display: none;
+    }
+    
+    .s-l-1,
+    .s-l-5 {
+        top: 3%;
+    }
+    
+    .s-l-2,
+    .s-l-4  {
+        top: 2.6%;
+    }
+    
+    .s-l-3 {
+        top: 2.25%;
+    }
+    
+    .wizard {
+        left: -30px;
+        height: 310px;
+        width: 200px;
+    }
+    
+    /*    BUTTON     */
+    
+    
+    .frame{
+        width: 210px;
+        height: 0px;
+        margin: 0 auto;
+        margin-top: 0px;
+        position: relative;
+        cursor: pointer;
+        top: -155px;
+        left: 15px;
+    }
+      
+    .frame:hover .hex-inner{
+        height: 100px;
+        top: 90px !important;
+        border-radius: 4px;
+    }
+      
+    .frame:hover .label{
+        transform: scale(.90);
+        -webkit-transform: scale(.90);
+    }
+      
+    .hex-outer{
+        background: rgba(166, 16, 34, 1);
+        width: 210px;
+        height: 120px;
+    }
+      
+    .hex-inner{
+        background: #373940;
+        width: 200px;
+        height: 115px;
+        position: relative;
+        left: 5px;
+        top: 82px !important;
+        border-radius: 0;
+        transition: all .4s;
+        -webkit-transition: all .4s;
+    }
+      
+    .h1{
+        position: absolute;
+        top: 80px;
+    }
+      
+    .h2{
+        position: absolute;
+        top: 80px;
+        transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+    }
+      
+    .h3{
+        position: absolute;
+        top: 80px;
+        transform: rotate(-60deg);
+        -webkit-transform: rotate(-60deg);
+    }
+      
+    .label{
+        position: absolute;
+        color: rgba(166, 16, 34, 1);
+        text-align: center;
+        font-weight: bold;
+        font-size: 45px;
+        width: 180px;
+        text-decoration: none;
+        left: 50%;
+        margin-left: -90px;
+        top: 80px;
+          transition: all .4s;
+        -webkit-transition: all .4s;
+    }
+    
+    .sure {
+        font-size: 20px;
+        font-variant: small-caps;
+        margin-left: -90px;
+        top: 174px;
+          transition: all .4s;
+        -webkit-transition: all .4s;
+    }
+}

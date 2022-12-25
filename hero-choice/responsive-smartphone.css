@@ -1,0 +1,143 @@
+@media only screen and (max-width: 500px) {
+    body {
+        overflow: scroll;
+    }
+    
+    header {
+        height: 4vh;
+        font-size: 6vw;
+        padding-top: 80px;
+    }
+    
+    p {
+        font-size: 3vw;
+        letter-spacing: 1px;
+    }
+    
+    h1 {
+        font-size: 4vw;
+    }
+    
+    h2 {
+        font-size: 3vw;
+    }
+    
+    .introduction-text {
+        height: 45vh;
+        padding-right: 10px;
+        overflow-y: scroll;
+    }
+    
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+      
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(166, 16, 34, 0.3);
+        border-radius: 5px;
+    }
+
+    .start-button-text {
+        font-size: 3.5vw;
+        margin: 0;
+    }
+    
+    .startTextButton {
+        width: 180px;
+        left: -90px;
+        border-radius: 8px;
+    }
+    
+                    /* COLUMN */
+    
+    .column {
+        position: absolute;
+                        
+        top: 3%;
+        height: 94vh;
+        width: 80px;
+    }
+                    
+    .c-left {
+        left: 0px;
+    }
+                    
+    .c-right {
+        right: 0px;
+    }
+
+    .u-l,
+    .d-l {
+        left: -40px;
+    }
+                    
+    .u-r,
+    .d-r {
+        right: -40px;
+    }
+                    
+    .shadow {
+        width: 6px;
+    }
+                    
+    .s-l-1 {
+        left: 0px;
+    }
+                    
+    .s-l-2 {
+        left: 18.7px;
+        top: 5.5%;
+        height: 89vh;
+    }
+                    
+    .s-l-3 {
+        left: 37.4px;
+        top: 5%;
+        height: 90vh;
+    }
+                    
+    .s-l-4 {
+        left: 56.1px;
+        top: 5.5%;
+        height: 89vh;
+    }
+                    
+    .s-l-5 {
+        left: 74px;        
+    }
+                    
+    .s-r-1 {
+        right: 0px;
+    }
+                    
+    .s-r-2 {
+        right: 18.7px;
+        top: 5.5%;
+        height: 89vh;
+    }
+                    
+    .s-r-3 {
+        right: 37.4px;
+        top: 5%;
+        height: 90vh;
+    }
+                    
+    .s-r-4 {
+        right: 56.1px;
+        top: 5.5%;
+        height: 89vh;
+    }
+                    
+    .s-r-5 {
+        right: 74px;
+        top: 6%;
+        height: 88vh; 
+    }
+}

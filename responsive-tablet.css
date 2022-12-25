@@ -1,0 +1,94 @@
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+    body {
+        margin: 0;
+        background-color: rgb(70, 52, 33);
+        overflow: hidden;
+    }
+    
+                    /* HEADER */
+    
+    header {
+        width: 600px;
+        padding-top: 250px;
+    }
+    
+    h1 {
+        font-size: 5.5vw;
+    }
+    
+    h3 {
+        font-size: 4.5vw;
+    }
+    
+    main {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+    
+                    /* COLUMN */
+    
+    .column {
+        width: 100px;
+        height: 96%;
+    }
+    
+    .c-left {
+        left: 30px;
+    }
+    
+    .c-right {
+        right: 30px;
+    }
+    
+    .up,
+    .down {  
+        border: 90px solid transparent;
+    }
+    
+    .up {
+        top: -3vh;
+        left: -40px;
+        border-top-color: rgb(255, 254, 239);
+    }
+    
+    .u-r,
+    .d-r {
+        right: 0;
+    }
+    
+    .down {
+        bottom: -3vh;
+        left: -30px; 
+    }
+    
+    .s-l-1,
+    .s-l-5,
+    .s-r-1,
+    .s-r-5 {
+        top: 1.5%;
+        height: 97%;
+    }
+    
+    .s-l-2,
+    .s-l-4,
+    .s-r-2,
+    .s-r-4 {
+        top: 1%;
+        height: 98%;
+    }
+    
+    .s-l-3,
+    .s-r-3 {
+        top: 0.5%;
+        height: 99%;
+    }
+    
+    .wizard {
+        left: 10px;
+        bottom: -27px;
+        height: 410px;
+        width: 300px;
+    }
+}

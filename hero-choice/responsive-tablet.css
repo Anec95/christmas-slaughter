@@ -1,0 +1,73 @@
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+    body {
+        height: 100%;
+        margin: 0;
+        color: rgba(166, 16, 34, 1);
+        background-color: rgb(70, 52, 33);
+        user-select: none;
+        overflow: scroll;
+    }
+    
+    header {
+        height: 6vh;
+        text-align: center;
+        font-size: 7vw;
+        padding-top: 100px;
+    }
+    
+    main {
+        text-align: center;
+    }
+    
+    p {
+        margin: 0 20%;
+        letter-spacing: 1px;
+        font-size: 2vw;
+    }
+    
+    .start-button-text {
+        font-size: 3vw;
+    }
+    
+    h1 {
+        font-size: 2.8vw;
+    }
+    
+    h2 {
+        font-size: 2.5vw;
+    }
+    
+    .introduction-text {
+        height: 50vh;
+        overflow-y: auto;
+    }
+    
+                    /* COLUMN */
+    
+    .column {
+        top: 2.5%;
+        height: 95vh;
+    }
+                    
+    .s-l-1,
+    .s-l-5,
+    .s-r-1,
+    .s-r-5 {
+        top: 4%;
+        height: 92vh;
+    }
+                    
+    .s-l-2,
+    .s-l-4,
+    .s-r-2,
+    .s-r-4  {
+        top: 3.75%;
+        height: 92.5vh;
+    }
+                    
+    .s-l-3,
+    .s-r-3 {
+        top: 3.5%;
+        height: 93vh;
+    }
+}
