@@ -215,8 +215,7 @@ header {
     display: none;
 }
 
-.object-name,
-.weapon-name {
+.object-name {
     flex: 1;
     margin: 0 5px;
 }
@@ -224,6 +223,7 @@ header {
 .weapon-name {
     padding: 1px;
     border-radius: 4px;
+    margin: 0;
 }
 
 .fa-times-circle-o {
@@ -256,8 +256,8 @@ header {
     margin: 30px;
 }
 
-.weapon-1 {
-    margin-bottom: 10px;
+.weapon-div {
+    position: relative;
 }
 
 .power-up-div {
@@ -274,7 +274,8 @@ header {
     background-color: rgb(255, 254, 239);
 }
 
-.info-powerup {
+.info-powerup,
+.info-sword {
     position: absolute;
     bottom: 10px;
     right: -10px;
@@ -286,7 +287,15 @@ header {
     display: none;
 }
 
+.info-sword {
+    right: -100px;
+}
+
 .powerUp:hover .info-powerup {
+    display: block;
+}
+
+.weapon-div:hover .info-sword {
     display: block;
 }
 
