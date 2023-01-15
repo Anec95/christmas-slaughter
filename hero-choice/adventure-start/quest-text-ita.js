@@ -767,7 +767,7 @@ export const dataTextIta = [
         "text": `Afferri un omino per una gamba e lo sollevi. Non avevi mai visto in vita tua dei bottoni gommosi così perfetti e invitanti. Alzi lo sguardo e vedi il suo sorriso benevolo che pian piano si tramuta in un ghigno malefico.
         Sta prendendo vita, e non sembra affatto contento di trovarsi tra le tue mani. Lo lasci cadere, non appena tocca terra si frantuma. Sono parecchio fragili sti cosi, non devono aver fatto un gran lavoro. Mentre ti si forma un'idea di dove potrebbero averli prodotti, sui tavoli gli altri omini di panpepato si stanno alzando con lo stesso ghigno.
         Vogliono la tua pelle, e tu sei esattamente nel mezzo.`,
-        "option1": `Preparati ad affrontare ste merdine`, //OPTION 94
+        "option1": `Preparati ad affrontare sti omuncoli`, //OPTION 94
         "option2": `Parkour`, //OPTION 95
         "option3": ``
     },
@@ -778,7 +778,7 @@ export const dataTextIta = [
         “Oh oh oh, figlio di odalisca!” quel cosino sembrava proprio appetitoso, ma chissà quale maleficio conteneva.
         Ed ecco che questi pensieri si fanno sempre più veritieri, intorno a te anche gli altri iniziano a levarsi in piedi.
         Sei accerchiato!`,
-        "option1": `Preparati ad affrontare ste merdine`, //OPTION 94
+        "option1": `Preparati ad affrontare sti omuncoli`, //OPTION 94
         "option2": `Parkour`, //OPTION 95
         "option3": ``
     },

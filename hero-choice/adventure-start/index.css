@@ -258,6 +258,7 @@ header {
 
 .weapon-div {
     position: relative;
+    width: 100%;
 }
 
 .power-up-div {
